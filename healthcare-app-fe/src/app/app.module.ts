@@ -7,6 +7,10 @@ import { LoginComponent } from './login/login.component';
 import { ProfileComponent } from './profile/profile.component';
 import { StatisticsComponent } from './statistics/statistics.component';
 import { QuestionareComponent } from './questionare/questionare.component';
+import { GuestionareListComponent } from './questionare/guestionare-list/guestionare-list.component';
+import { GuestionareNewComponent } from './questionare/guestionare-new/guestionare-new.component';
+import { QuestionareNewComponent } from './questionare/questionare-new/questionare-new.component';
+import { QuestionareListComponent } from './questionare/questionare-list/questionare-list.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +18,11 @@ import { QuestionareComponent } from './questionare/questionare.component';
     LoginComponent,
     ProfileComponent,
     StatisticsComponent,
-    QuestionareComponent
+    QuestionareComponent,
+    GuestionareListComponent,
+    GuestionareNewComponent,
+    QuestionareNewComponent,
+    QuestionareListComponent
   ],
   imports: [
     BrowserModule,
