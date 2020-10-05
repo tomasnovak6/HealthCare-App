@@ -4,12 +4,12 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
-import { ProfileComponent } from './profile/profile.component';
-import { StatisticsComponent } from './overview/statistics/statistics.component';
-import { QuestionareComponent } from './questionare/questionare.component';
-import { QuestionareNewComponent } from './questionare/questionare-new/questionare-new.component';
-import { QuestionareListComponent } from './questionare/questionare-list/questionare-list.component';
-import { OverviewComponent } from './overview/overview.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import { StatisticsComponent } from './components/overview/statistics/statistics.component';
+import { QuestionareComponent } from './components/questionare/questionare.component';
+import { QuestionareNewComponent } from './components/questionare/questionare-new/questionare-new.component';
+import { QuestionareListComponent } from './components/questionare/questionare-list/questionare-list.component';
+import { OverviewComponent } from './components/overview/overview.component';
 
 @NgModule({
   declarations: [
