@@ -5,12 +5,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { ProfileComponent } from './profile/profile.component';
-import { StatisticsComponent } from './statistics/statistics.component';
+import { StatisticsComponent } from './overview/statistics/statistics.component';
 import { QuestionareComponent } from './questionare/questionare.component';
-import { GuestionareListComponent } from './questionare/guestionare-list/guestionare-list.component';
-import { GuestionareNewComponent } from './questionare/guestionare-new/guestionare-new.component';
 import { QuestionareNewComponent } from './questionare/questionare-new/questionare-new.component';
 import { QuestionareListComponent } from './questionare/questionare-list/questionare-list.component';
+import { OverviewComponent } from './overview/overview.component';
 
 @NgModule({
   declarations: [
@@ -19,10 +18,9 @@ import { QuestionareListComponent } from './questionare/questionare-list/questio
     ProfileComponent,
     StatisticsComponent,
     QuestionareComponent,
-    GuestionareListComponent,
-    GuestionareNewComponent,
     QuestionareNewComponent,
-    QuestionareListComponent
+    QuestionareListComponent,
+    OverviewComponent
   ],
   imports: [
     BrowserModule,
