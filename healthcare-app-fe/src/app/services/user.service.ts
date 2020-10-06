@@ -1,30 +1,34 @@
 import { Injectable } from '@angular/core';
 
 import { IUser } from '../interfaces/iuser';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
 
-  constructor() {
+  constructor(
+    private httpClient: HttpClient
+  ) {
 
   }
 
-  getUser() {
-
+  getUser(): Observable<IUser> {
+    return null;
   }
 
-  getUsers() {
-
+  getUsers(): Observable<IUser[]> {
+    return null;
   }
 
-  updateUser() {
-
+  updateUser(): Observable<IUser> {
+    return null;
   }
 
-  validateUser() {
-
+  validateUser(): boolean {
+    return null;
   }
 
 }

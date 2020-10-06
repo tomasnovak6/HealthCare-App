@@ -1,22 +1,26 @@
 import { Injectable } from '@angular/core';
 
 import { ISymptom } from '../interfaces/isymptom';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SymptomService {
 
-  constructor() {
+  constructor(
+    private httpClient: HttpClient
+  ) {
 
   }
 
-  getSymptom() {
-
+  getSymptom(): Observable<ISymptom> {
+    return null;
   }
 
-  getSymptoms() {
-
+  getSymptoms(): Observable<ISymptom[]> {
+    return null;
   }
 
 }

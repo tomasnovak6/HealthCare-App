@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import * as d3 from 'd3';
+import { HealthConditionService } from '../../../services/health-condition.service';
 
 @Component({
   selector: 'app-statistics',
@@ -11,7 +12,9 @@ export class StatisticsComponent implements OnInit {
 
   radius = 10;
 
-  constructor() { }
+  constructor(
+    private healthConditionService: HealthConditionService
+  ) { }
 
   ngOnInit() {
 
