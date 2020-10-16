@@ -1,1 +1,25 @@
-<p>login works!</p>
+<div class="container">
+
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <div class="row">
+      <label>
+        {{ 'component.login.username' | translate }}:
+        <input type="text" formControlName="username" required />
+      </label>
+    </div>
+
+    <div class="row">
+      <label>
+        {{ 'component.login.password' | translate }}:
+        <input type="password" formControlName="password" required />
+      </label>
+    </div>
+
+    <div class="row">
+      <div class="col col-md-8 offset-md-4">
+        <button type="submit" [disabled]="!loginForm.valid">{{ 'login' | translate }}</button>
+      </div>
+    </div>
+  </form>
+
+</div>

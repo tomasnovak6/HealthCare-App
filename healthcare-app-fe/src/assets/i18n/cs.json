@@ -1,10 +1,17 @@
 {
   "common": {
-    "hello": "Vítejte v mé aplikaci HealthCare-App",
+    "hello": "Vítejte v aplikaci HealthCare-App",
     "yes": "Ano",
     "no": "Ne",
     "cancel": "Storno",
     "add": "Přidat",
-    "delete": "Odstranit"
+    "delete": "Odstranit",
+    "login": "Přihlásit"
+  },
+  "component": {
+    "login": {
+      "username": "Uživatelské jméno",
+      "password": "Heslo"
+    }
   }
 }

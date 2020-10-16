@@ -22,4 +22,7 @@ describe('LoginComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  // todo: tady napsat nejaky pokus o prihlaseni pomoci unit testu
+
 });
