@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import * as d3 from 'd3';
-import { HealthConditionService } from '../../../services/health-condition.service';
+import { HealthConditionService } from '../../../_services/health-condition.service';
 
 @Component({
   selector: 'app-statistics',

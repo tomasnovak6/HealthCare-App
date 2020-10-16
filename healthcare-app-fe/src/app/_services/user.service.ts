@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 
-import { ISymptom } from '../interfaces/isymptom';
+import { IUser } from '../_interfaces/iuser';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
-export class SymptomService {
+export class UserService {
 
   constructor(
     private httpClient: HttpClient
@@ -15,11 +15,19 @@ export class SymptomService {
 
   }
 
-  getSymptom(): Observable<ISymptom> {
+  getUser(): Observable<IUser> {
     return null;
   }
 
-  getSymptoms(): Observable<ISymptom[]> {
+  getUsers(): Observable<IUser[]> {
+    return null;
+  }
+
+  updateUser(): Observable<IUser> {
+    return null;
+  }
+
+  validateUser(): boolean {
     return null;
   }
 

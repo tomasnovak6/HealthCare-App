@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 
-import { IUser } from '../interfaces/iuser';
+import { IHealthCondition } from '../_interfaces/ihealth-condition';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
-export class UserService {
+export class HealthConditionService {
 
   constructor(
     private httpClient: HttpClient
@@ -15,19 +15,15 @@ export class UserService {
 
   }
 
-  getUser(): Observable<IUser> {
+  getHealthCondition(): Observable<IHealthCondition> {
     return null;
   }
 
-  getUsers(): Observable<IUser[]> {
+  getHealthConditions(): Observable<IHealthCondition[]> {
     return null;
   }
 
-  updateUser(): Observable<IUser> {
-    return null;
-  }
-
-  validateUser(): boolean {
+  newHealthCondition(): Observable<IHealthCondition> {
     return null;
   }
 

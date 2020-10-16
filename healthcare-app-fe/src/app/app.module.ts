@@ -1,9 +1,16 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { ReactiveFormsModule } from '@angular/forms';
+
+// toto je pro HTTP komunikaci mezi FE a BE
+// import {HttpClientInMemoryWebApiModule} from 'angular-in-memory-web-api';
+// tady jsou fake data, ktera pak budou na Back-Endu
+// import {InMemoryDataService} from './_services/in-memory-data.service';
+
+import { AuthGuard } from './_helpers/auth.guard';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,6 +21,8 @@ import { QuestionareComponent } from './components/questionare/questionare.compo
 import { QuestionareNewComponent } from './components/questionare/questionare-new/questionare-new.component';
 import { QuestionareListComponent } from './components/questionare/questionare-list/questionare-list.component';
 import { OverviewComponent } from './components/overview/overview.component';
+import { ValidateMessageComponent } from './components/shared/validate-message/validate-message.component';
+import { fakeBackendProvider, JwtInterceptor } from './_helpers';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -29,7 +38,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     QuestionareComponent,
     QuestionareNewComponent,
     QuestionareListComponent,
-    OverviewComponent
+    OverviewComponent,
+    ValidateMessageComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +55,13 @@ export function HttpLoaderFactory(http: HttpClient) {
       // defaultLanguage: 'en'
     })
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+
+    // provider used to create fake backend
+    fakeBackendProvider
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { SymptomService } from '../../services/symptom.service';
-import { HealthConditionService } from '../../services/health-condition.service';
+import { SymptomService } from '../../_services/symptom.service';
+import { HealthConditionService } from '../../_services/health-condition.service';
 
 @Component({
   selector: 'app-questionare',

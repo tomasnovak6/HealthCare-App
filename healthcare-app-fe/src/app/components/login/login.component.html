@@ -4,20 +4,28 @@
     <div class="row">
       <label>
         {{ 'component.login.username' | translate }}:
-        <input type="text" formControlName="username" required />
+        <input type="text" id="username" class="form-control" formControlName="username" required />
+
+        <!-- todo: validace dat do nejake komponenty -->
+        <div *ngIf="username.invalid && (username.dirty || username.touched)"
+             class="alert alert-danger">
+          <div *ngIf="username.errors.required">Name is required.</div>
+          <div *ngIf="username.errors.minlength">Name must be at least 3 characters long.</div>
+        </div>
+
       </label>
     </div>
 
     <div class="row">
       <label>
         {{ 'component.login.password' | translate }}:
-        <input type="password" formControlName="password" required />
+        <input type="password" id="password" class="form-control" formControlName="password" required />
       </label>
     </div>
 
     <div class="row">
       <div class="col col-md-8 offset-md-4">
-        <button type="submit" [disabled]="!loginForm.valid">{{ 'login' | translate }}</button>
+        <button type="submit">{{ 'login' | translate }}</button>
       </div>
     </div>
   </form>
