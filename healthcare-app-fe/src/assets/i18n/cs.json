@@ -1,0 +1,10 @@
+{
+  "common": {
+    "hello": "Vítejte v mé aplikaci HealthCare-App",
+    "yes": "Ano",
+    "no": "Ne",
+    "cancel": "Storno",
+    "add": "Přidat",
+    "delete": "Odstranit"
+  }
+}

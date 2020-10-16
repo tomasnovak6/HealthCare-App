@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,6 +13,11 @@ import { QuestionareComponent } from './components/questionare/questionare.compo
 import { QuestionareNewComponent } from './components/questionare/questionare-new/questionare-new.component';
 import { QuestionareListComponent } from './components/questionare/questionare-list/questionare-list.component';
 import { OverviewComponent } from './components/overview/overview.component';
+
+// AoT requires an exported function for factories
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}
 
 @NgModule({
   declarations: [
@@ -26,7 +33,15 @@ import { OverviewComponent } from './components/overview/overview.component';
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      },
+      // defaultLanguage: 'en'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
