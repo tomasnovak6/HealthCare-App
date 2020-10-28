@@ -23,6 +23,8 @@ import { QuestionareListComponent } from './components/questionare/questionare-l
 import { OverviewComponent } from './components/overview/overview.component';
 import { ValidateMessageComponent } from './components/shared/validate-message/validate-message.component';
 import { fakeBackendProvider, JwtInterceptor } from './_helpers';
+import { HelloWorldComponent } from './components/hello-world/hello-world.component';
+import { GreetingsComponent } from './components/greetings/greetings.component';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -39,7 +41,9 @@ export function HttpLoaderFactory(http: HttpClient) {
     QuestionareNewComponent,
     QuestionareListComponent,
     OverviewComponent,
-    ValidateMessageComponent
+    ValidateMessageComponent,
+    HelloWorldComponent,
+    GreetingsComponent
   ],
   imports: [
     BrowserModule,
