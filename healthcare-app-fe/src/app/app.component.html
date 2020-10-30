@@ -1,11 +1,14 @@
-<div class="content" role="main">
-  <h1>{{ 'common.hello' | translate }}</h1>
+<header id="header">
+  Header
+</header>
 
-  <!-- <app-overview></app-overview> -->
-  <app-login></app-login>
+<app-header></app-header>
 
+<main class="content" role="main">
   <router-outlet></router-outlet>
-</div>
+</main>
+
+<app-footer></app-footer>
 
 
 

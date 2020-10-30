@@ -17,7 +17,7 @@ export class AppComponent {
   constructor(
     public translate: TranslateService,
     private router: Router,
-    private authenticationService: AuthenticationService
+    // private authenticationService: AuthenticationService
   ) {
     // translate init
     translate.addLangs(['cs', 'en']);
@@ -32,12 +32,7 @@ export class AppComponent {
     }
 
     // fake backend init
-    this.authenticationService.currentUser.subscribe(x => this.currentUser = x);
-  }
-
-  logout(): void {
-    this.authenticationService.logout();
-    this.router.navigate(['/login']);
+    // this.authenticationService.currentUser.subscribe(x => this.currentUser = x);
   }
 
 }

@@ -5,9 +5,10 @@ import { Observable } from 'rxjs';
 import { AuthenticationService } from '../_services/authentication.service';
 
 @Injectable()
-export class JwtInterceptor implements HttpInterceptor {
+export class JwtInterceptor /* implements HttpInterceptor */ {
   constructor(private authenticationService: AuthenticationService) {}
 
+  /*
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     // prida autorizacni header s JWT tokenem, pokud je dostupny
     let currentUser = this.authenticationService.currentUserValue;
@@ -21,4 +22,6 @@ export class JwtInterceptor implements HttpInterceptor {
 
     return next.handle(request);
   }
+  */
+
 }

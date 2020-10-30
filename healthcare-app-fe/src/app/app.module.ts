@@ -1,6 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HTTP_INTERCEPTORS, HttpClient, HttpClientModule } from '@angular/common/http';
+
+// import { HTTP_INTERCEPTORS, HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -22,9 +25,10 @@ import { QuestionareNewComponent } from './components/questionare/questionare-ne
 import { QuestionareListComponent } from './components/questionare/questionare-list/questionare-list.component';
 import { OverviewComponent } from './components/overview/overview.component';
 import { ValidateMessageComponent } from './components/shared/validate-message/validate-message.component';
-import { fakeBackendProvider, JwtInterceptor } from './_helpers';
-import { HelloWorldComponent } from './components/hello-world/hello-world.component';
-import { GreetingsComponent } from './components/greetings/greetings.component';
+import { MedicationComponent } from './components/medication/medication.component';
+import { HeaderComponent } from './components/shared/header/header.component';
+import { FooterComponent } from './components/shared/footer/footer.component';
+// import { fakeBackendProvider, JwtInterceptor } from './_helpers';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -42,8 +46,9 @@ export function HttpLoaderFactory(http: HttpClient) {
     QuestionareListComponent,
     OverviewComponent,
     ValidateMessageComponent,
-    HelloWorldComponent,
-    GreetingsComponent
+    MedicationComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -60,11 +65,11 @@ export function HttpLoaderFactory(http: HttpClient) {
     })
   ],
   providers: [
-    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    /*{ provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
 
     // provider used to create fake backend
-    fakeBackendProvider
+    fakeBackendProvider*/
   ],
   bootstrap: [AppComponent]
 })

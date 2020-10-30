@@ -1,0 +1,10 @@
+<nav id="main-menu">
+  <ul>
+    <li><a routerLink="/">{{ 'mainMenu.homepage' | translate }}</a></li>
+    <li><a routerLink="/questionare">{{ 'mainMenu.questionare' | translate }}</a></li>
+    <li><a routerLink="/statistics">{{ 'mainMenu.statistics' | translate }}</a></li>
+    <li><a routerLink="/medication">{{ 'mainMenu.medication' | translate }}</a></li>
+    <li><a routerLink="/editProfile">{{ 'mainMenu.editProfile' | translate }}</a></li>
+    <li><a routerLink="" (click)="logout()">{{ 'mainMenu.logout' | translate }}</a></li>
+  </ul>
+</nav>

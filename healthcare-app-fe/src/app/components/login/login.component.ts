@@ -11,7 +11,7 @@ import { UserService } from '../../_services/user.service';
 export class LoginComponent implements OnInit {
 
   loginForm = this.fb.group({
-    username: ['', [Validators.required, Validators.minLength(3)]],
+    email: ['', [Validators.required, Validators.minLength(5)]],
     password: ['', [Validators.required, Validators.minLength(8)]]
   });
 
@@ -29,8 +29,8 @@ export class LoginComponent implements OnInit {
 
   }
 
-  get username() {
-    return this.loginForm.get('username');
+  get email() {
+    return this.loginForm.get('email');
   }
 
   get password() {

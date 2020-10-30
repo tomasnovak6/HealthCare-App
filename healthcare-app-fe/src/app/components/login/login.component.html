@@ -3,14 +3,14 @@
   <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
     <div class="row">
       <label>
-        {{ 'component.login.username' | translate }}:
-        <input type="text" id="username" class="form-control" formControlName="username" required />
+        {{ 'component.login.email' | translate }}:
+        <input type="text" id="email" class="form-control" formControlName="email" required />
 
         <!-- todo: validace dat do nejake komponenty -->
-        <div *ngIf="username.invalid && (username.dirty || username.touched)"
+        <div *ngIf="email.invalid && (email.dirty || email.touched)"
              class="alert alert-danger">
-          <div *ngIf="username.errors.required">Name is required.</div>
-          <div *ngIf="username.errors.minlength">Name must be at least 3 characters long.</div>
+          <div *ngIf="email.errors.required">E-mail is required.</div>
+          <div *ngIf="email.errors.minlength">E-mail must be at least 5 characters long.</div>
         </div>
 
       </label>

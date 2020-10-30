@@ -6,11 +6,23 @@
     "cancel": "Storno",
     "add": "Přidat",
     "delete": "Odstranit",
-    "login": "Přihlásit"
+    "login": "Přihlásit",
+    "register": "Registrovat"
+  },
+  "button": {
+    "openQuestionare": "Otevřít dotazník"
+  },
+  "mainMenu": {
+    "homepage": "Homepage",
+    "questionare": "Dotazník",
+    "statistics": "Statistiky",
+    "medication": "Medikace",
+    "editProfile": "Editace profilu",
+    "logout": "Odhlásit se"
   },
   "component": {
     "login": {
-      "username": "Uživatelské jméno",
+      "email": "E-mail",
       "password": "Heslo"
     }
   }

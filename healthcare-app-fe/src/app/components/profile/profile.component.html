@@ -1,1 +1,25 @@
-<p>profile works!</p>
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+  <div class="row">
+    <label>
+      <input type="text" id="firstname" class="form-control" formControlName="firstname" required />
+    </label>
+  </div>
+  <div class="row">
+    <label>
+      <input type="text" id="lastname" class="form-control" formControlName="lastname" required />
+    </label>
+  </div>
+  <div class="row">
+    <label>
+      <input type="text" id="birthDate" class="form-control" formControlName="birthDate" />
+    </label>
+  </div>
+  <div class="row">
+    <label>
+      <input type="text" id="email" class="form-control" formControlName="email" required />
+    </label>
+  </div>
+  <div class="row">
+    <button type="submit">{{ 'register' | translate }}</button>
+  </div>
+</form>
