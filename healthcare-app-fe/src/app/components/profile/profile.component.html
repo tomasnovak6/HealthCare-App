@@ -1,30 +1,42 @@
 <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+
   <div class="row">
     <label>
       {{ 'component.profile.firstname' | translate }}:
       <input type="text" id="firstname" class="form-control" formControlName="firstname" required />
     </label>
   </div>
+
   <div class="row">
     <label>
       {{ 'component.profile.lastname' | translate }}:
       <input type="text" id="lastname" class="form-control" formControlName="lastname" required />
     </label>
   </div>
+
   <div class="row">
     <label>
       {{ 'component.profile.email' | translate }}:
       <input type="text" id="email" class="form-control" formControlName="email" required />
     </label>
   </div>
+
+  <div class="row">
+    <label>
+      {{ 'component.profile.password' | translate }}:
+      <input type="password" id="password" class="form-control" formControlName="password" required />
+    </label>
+  </div>
+
   <div class="row">
     <label>
       {{ 'component.profile.birthDate' | translate }}:
-      <input type="text" id="birthDate" class="form-control" formControlName="birthDate" />
+      <input type="date" id="birthDate" class="form-control" formControlName="birthDate" />
     </label>
   </div>
 
   <div class="row">
     <button type="submit" class="btn btn-primary">{{ 'common.register' | translate }}</button>
   </div>
+
 </form>

@@ -25,15 +25,13 @@ export class ProfileComponent implements OnInit {
     private userService: UserService,
     private alertService: AlertService
   ) {
-    // redirect to home if already logged in
+    // presmerovani ma overview, pokud je uzivatel prihlasen
     if (this.authenticationService.currentUserValue) {
       this.router.navigate(['/']);
     }
   }
 
   ngOnInit() {
-    console.log('router', this.router.url);
-
     this.profileForm = this.fb.group({
       email: ['', [Validators.required, Validators.minLength(5)]],
       password: ['', [Validators.required, Validators.minLength(8)]],
@@ -46,15 +44,16 @@ export class ProfileComponent implements OnInit {
   // convenience getter for easy access to form fields
   get f() { return this.profileForm.controls; }
 
+  // todo: dopsat setty k jednotlivym polim pro validaci
+
   onSubmit(): void {
-    // console.log('profileForm', this.profileForm.value);
 
     this.submitted = true;
 
-    // reset alerts on submit
+    // vyresetovat notifikace pri submitu
     this.alertService.clear();
 
-    // stop here if form is invalid
+    // nepokravat, pokud neni formular validni
     if (this.profileForm.invalid) {
       return;
     }

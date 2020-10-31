@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { IUser } from '../_interfaces/iuser';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -15,16 +16,18 @@ export class UserService {
 
   }
 
-  getUser(): Observable<IUser> {
+  // todo: vyresit any
+  getUser(user: any): Observable<IUser> {
     return null;
   }
 
   getUsers(): Observable<IUser[]> {
-    return this.http.get<IUser[]>('http://localhost:4000/users');
+    return this.http.get<IUser[]>(environment.apiUrl + 'users');
   }
 
-  insertUser(form: any): Observable<IUser> {
-    return null;
+  // todo: vyresit any
+  insertUser(user: any): Observable<any> {
+    return this.http.post(environment.apiUrl + 'users/register', user);
   }
 
   updateUser(): Observable<IUser> {
