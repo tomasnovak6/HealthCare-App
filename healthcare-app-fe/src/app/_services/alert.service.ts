@@ -6,9 +6,8 @@ import { NavigationStart, Router } from '@angular/router';
   providedIn: 'root'
 })
 export class AlertService {
-
   private subject = new Subject<any>();
-  private keepAfterRouteChange: boolean = false;
+  private keepAfterRouteChange = false;
 
   constructor(private router: Router) {
     // vymaz zpravy pri zmene routy

@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';
 export class UserService {
 
   constructor(
-    private httpClient: HttpClient
+    private http: HttpClient
   ) {
 
   }
@@ -20,6 +20,10 @@ export class UserService {
   }
 
   getUsers(): Observable<IUser[]> {
+    return this.http.get<IUser[]>(`${config.apiUrl}/users`);
+  }
+
+  insertUser(form: any): Observable<IUser> {
     return null;
   }
 

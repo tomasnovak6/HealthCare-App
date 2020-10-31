@@ -4,13 +4,13 @@ import { Observable, of, throwError } from 'rxjs';
 import { delay, mergeMap, materialize, dematerialize } from 'rxjs/operators';
 import { IUser } from '../_interfaces/iuser';
 
-// array in local storage for registered users
-// let users = JSON.parse(localStorage.getItem('users')) || [];
-let users: IUser[] = [
+/*let users: IUser[] = [
   {id: 1, firstname: 'Tomas', lastname: 'Novak', email: 'tnovak@centrum.cz', username: 'tomas.novak', password: 'heslo10'},
   {id: 2, firstname: 'Jmeno', lastname: 'Prijmeni', email: 'novak2@komix.cz', username: 'jmeno.prijmeni', password: 'heslo20'},
   {id: 3, firstname: 'Test', lastname: 'Testovaci', email: 'test@principal.cz', username: 'test.testovaci', password: 'test'}
-];
+];*/
+// array in local storage for registered users
+let users = JSON.parse(localStorage.getItem('users')) || [];
 
 @Injectable()
 export class FakeBackendInterceptor implements HttpInterceptor {
@@ -43,14 +43,14 @@ export class FakeBackendInterceptor implements HttpInterceptor {
     // route functions
 
     function authenticate() {
-      const { username, password } = body;
-      const user = users.find(x => x.username === username && x.password === password);
-      if (!user) return error('Username or password is incorrect');
+      const { email, password } = body;
+      const user = users.find(x => x.email === email && x.password === password);
+      if (!user) return error('E-mail or password is incorrect');
       return ok({
         id: user.id,
-        username: user.username,
-        firstName: user.firstname,
-        lastName: user.lastname,
+        email: user.email,
+        firstName: user.firstName,
+        lastName: user.lastName,
         token: 'fake-jwt-token'
       })
     }
@@ -58,8 +58,8 @@ export class FakeBackendInterceptor implements HttpInterceptor {
     function register() {
       const user = body
 
-      if (users.find(x => x.username === user.username)) {
-        return error('Username "' + user.username + '" is already taken')
+      if (users.find(x => x.email === user.email)) {
+        return error('E-mail "' + user.email + '" is already taken')
       }
 
       user.id = users.length ? Math.max(...users.map(x => x.id)) + 1 : 1;
@@ -75,11 +75,11 @@ export class FakeBackendInterceptor implements HttpInterceptor {
     }
 
     function deleteUser() {
-          if (!isLoggedIn()) return unauthorized();
+      if (!isLoggedIn()) return unauthorized();
 
-          users = users.filter(x => x.id !== idFromUrl());
-          localStorage.setItem('users', JSON.stringify(users));
-          return ok();
+      users = users.filter(x => x.id !== idFromUrl());
+      localStorage.setItem('users', JSON.stringify(users));
+      return ok();
     }
 
     // helper functions

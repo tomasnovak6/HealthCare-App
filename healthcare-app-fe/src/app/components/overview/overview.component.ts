@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
+import { AuthenticationService } from '../../_services/authentication.service';
+import { UserService } from '../../_services/user.service';
+import { IUser } from '../../_interfaces/iuser';
+
 @Component({
   selector: 'app-overview',
   templateUrl: './overview.component.html',
@@ -8,7 +12,15 @@ import { Router } from '@angular/router';
 })
 export class OverviewComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  currentUser: IUser;
+
+  constructor(
+    private authenticationService: AuthenticationService,
+    private userService: UserService,
+    private router: Router
+  ) {
+    this.currentUser = this.authenticationService.currentUserValue;
+  }
 
   ngOnInit() {
 
