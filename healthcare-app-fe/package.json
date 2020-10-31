@@ -22,7 +22,7 @@
     "@ngx-translate/core": "^12.1.2",
     "@ngx-translate/http-loader": "^6.0.0",
     "boostrap": "^2.0.0",
-    "bootstrap": "^4.5.2",
+    "bootstrap": "^4.5.3",
     "d3": "^6.2.0",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",

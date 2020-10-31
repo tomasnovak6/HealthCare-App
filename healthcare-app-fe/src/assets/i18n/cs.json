@@ -1,5 +1,6 @@
 {
   "common": {
+    "applicationName": "HealthCare-App",
     "hello": "Vítejte v aplikaci HealthCare-App",
     "yes": "Ano",
     "no": "Ne",
@@ -24,6 +25,13 @@
     "login": {
       "email": "E-mail",
       "password": "Heslo"
+    },
+    "profile": {
+      "email": "E-mail",
+      "password": "Heslo",
+      "firstname": "Jméno",
+      "lastname": "Příjmení",
+      "birthDate": "Datum narození"
     }
   }
 }

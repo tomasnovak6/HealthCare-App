@@ -1,5 +1,6 @@
 {
   "common": {
+    "applicationName": "healthCare-App",
     "hello": "Welcome to the application HealthCare-App",
     "yes": "Yes",
     "no": "No",
@@ -14,6 +15,13 @@
     "login": {
       "email": "E-mail",
       "password": "Password"
+    },
+    "profile": {
+      "email": "E-mail",
+      "password": "Password",
+      "firstname": "First name",
+      "lastname": "Last name",
+      "birthDate": "Birthdate"
     }
   }
 }

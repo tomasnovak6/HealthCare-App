@@ -1,10 +1,28 @@
-<nav id="main-menu">
-  <ul>
-    <li><a routerLink="/">{{ 'mainMenu.homepage' | translate }}</a></li>
-    <li><a routerLink="/questionare">{{ 'mainMenu.questionare' | translate }}</a></li>
-    <li><a routerLink="/statistics">{{ 'mainMenu.statistics' | translate }}</a></li>
-    <li><a routerLink="/medication">{{ 'mainMenu.medication' | translate }}</a></li>
-    <li><a routerLink="/editProfile">{{ 'mainMenu.editProfile' | translate }}</a></li>
-    <li><a routerLink="" (click)="logout()">{{ 'mainMenu.logout' | translate }}</a></li>
-  </ul>
+<header id="header">
+  <div class="container">
+    <h1>{{ 'common.applicationName' | translate }}</h1>
+  </div>
+</header>
+
+<nav id="main-menu" class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container">
+    <div class="col-10">
+      <ul class="navbar-nav">
+        <li class="nav-item active"><a class="nav-link" routerLink="/">{{ 'mainMenu.homepage' | translate }}</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="/questionare">{{ 'mainMenu.questionare' | translate }}</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="/statistics">{{ 'mainMenu.statistics' | translate }}</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="/medication">{{ 'mainMenu.medication' | translate }}</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="/editProfile">{{ 'mainMenu.editProfile' | translate }}</a></li>
+      </ul>
+    </div>
+
+    <div class="col-2">
+      <button
+        type="button"
+        class="btn btn-outline-light btn-sm"
+        (click)="logout()"
+      >{{ 'mainMenu.logout' | translate }}</button>
+    </div>
+  </div>
+
 </nav>
