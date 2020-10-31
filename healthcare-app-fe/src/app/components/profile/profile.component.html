@@ -4,6 +4,11 @@
     <label>
       {{ 'component.profile.firstname' | translate }}:
       <input type="text" id="firstname" class="form-control" formControlName="firstname" required />
+
+      <div *ngIf="f.firstname.invalid && (f.firstname.dirty || f.firstname.touched)" class="alert alert-danger">
+        <div *ngIf="f.firstname.errors.required">{{ 'validationMessage.firstname.required' | translate }}</div>
+        <div *ngIf="f.firstname.errors.minlength">{{ 'validationMessage.firstname.minlength' | translate }}</div>
+      </div>
     </label>
   </div>
 
@@ -11,6 +16,11 @@
     <label>
       {{ 'component.profile.lastname' | translate }}:
       <input type="text" id="lastname" class="form-control" formControlName="lastname" required />
+
+      <div *ngIf="f.lastname.invalid && (f.lastname.dirty || f.lastname.touched)" class="alert alert-danger">
+        <div *ngIf="f.lastname.errors.required">{{ 'validationMessage.lastname.required' | translate }}</div>
+        <div *ngIf="f.lastname.errors.minlength">{{ 'validationMessage.lastname.minlength' | translate }}</div>
+      </div>
     </label>
   </div>
 
@@ -18,6 +28,11 @@
     <label>
       {{ 'component.profile.email' | translate }}:
       <input type="text" id="email" class="form-control" formControlName="email" required />
+
+      <div *ngIf="f.email.invalid && (f.email.dirty || f.email.touched)" class="alert alert-danger">
+        <div *ngIf="f.email.errors.required">{{ 'validationMessage.email.required' | translate }}</div>
+        <div *ngIf="f.email.errors.minlength">{{ 'validationMessage.email.minlength' | translate }}</div>
+      </div>
     </label>
   </div>
 
@@ -25,6 +40,11 @@
     <label>
       {{ 'component.profile.password' | translate }}:
       <input type="password" id="password" class="form-control" formControlName="password" required />
+
+      <div *ngIf="f.password.invalid && (f.password.dirty || f.password.touched)" class="alert alert-danger">
+        <div *ngIf="f.password.errors.required">{{ 'validationMessage.password.required' | translate }}</div>
+        <div *ngIf="f.password.errors.minlength">{{ 'validationMessage.password.minlength' | translate }}</div>
+      </div>
     </label>
   </div>
 

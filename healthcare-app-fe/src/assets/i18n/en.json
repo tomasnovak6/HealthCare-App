@@ -11,6 +11,32 @@
   "button": {
     "openQuestionare": "Open Questionare"
   },
+  "mainMenu": {
+    "homepage": "Homepage",
+    "questionare": "Questionare",
+    "statistics": "Statistics",
+    "medication": "Medication",
+    "editProfile": "Edit profile",
+    "logout": "Logout"
+  },
+  "validationMessage": {
+    "email": {
+      "required": "E-mail is required.",
+      "minlength": "E-mail must be at least 5 characters long."
+    },
+    "password": {
+      "required": "Password is required.",
+      "minlength": "Password must be at least 8 characters long."
+    },
+    "firstname": {
+      "required": "Name is required",
+      "minlength": "Name must be at least 3 characters long."
+    },
+    "lastname": {
+      "required": "Last name is required",
+      "minlength": "Last name must be at least 3 characters long."
+    }
+  },
   "component": {
     "login": {
       "email": "E-mail",

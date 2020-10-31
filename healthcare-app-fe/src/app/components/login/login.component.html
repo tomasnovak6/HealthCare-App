@@ -6,13 +6,10 @@
         {{ 'component.login.email' | translate }}:
         <input type="text" id="email" class="form-control" formControlName="email" required />
 
-        <!-- todo: validace dat do nejake komponenty -->
-        <div *ngIf="email.invalid && (email.dirty || email.touched)"
-             class="alert alert-danger">
-          <div *ngIf="email.errors.required">E-mail is required.</div>
-          <div *ngIf="email.errors.minlength">E-mail must be at least 5 characters long.</div>
+        <div *ngIf="f.email.invalid && (f.email.dirty || f.email.touched)" class="alert alert-danger">
+          <div *ngIf="f.email.errors.required">{{ 'validationMessage.email.required' | translate }}</div>
+          <div *ngIf="f.email.errors.minlength">{{ 'validationMessage.email.minlength' | translate }}</div>
         </div>
-
       </label>
     </div>
 
@@ -20,6 +17,11 @@
       <label>
         {{ 'component.login.password' | translate }}:
         <input type="password" id="password" class="form-control" formControlName="password" required />
+
+        <div *ngIf="f.password.invalid && (f.password.dirty || f.password.touched)" class="alert alert-danger">
+          <div *ngIf="f.password.errors.required">{{ 'validationMessage.password.required' | translate }}</div>
+          <div *ngIf="f.password.errors.minlength">{{ 'validationMessage.password.minlength' | translate }}</div>
+        </div>
       </label>
     </div>
 

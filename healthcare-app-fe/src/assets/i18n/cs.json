@@ -21,6 +21,24 @@
     "editProfile": "Editace profilu",
     "logout": "Odhlásit se"
   },
+  "validationMessage": {
+    "email": {
+      "required": "E-mail je povinný.",
+      "minlength": "E-mail musí obsahovat minimálně 5 znaků."
+    },
+    "password": {
+      "required": "Heslo je povinné.",
+      "minlength": "Heslo musí obsahovat minimálně 8 znaků."
+    },
+    "firstname": {
+      "required": "Jméno je povinné.",
+      "minlength": "Jméno musí obsahovat minimálně 3 znaky."
+    },
+    "lastname": {
+      "required": "Příjmení je povinné.",
+      "minlength": "Příjmení musí obsahovat minimálně 3 znaky."
+    }
+  },
   "component": {
     "login": {
       "email": "E-mail",

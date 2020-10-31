@@ -16,7 +16,6 @@ import { QuestionareComponent } from './components/questionare/questionare.compo
 import { QuestionareNewComponent } from './components/questionare/questionare-new/questionare-new.component';
 import { QuestionareListComponent } from './components/questionare/questionare-list/questionare-list.component';
 import { OverviewComponent } from './components/overview/overview.component';
-import { ValidateMessageComponent } from './components/shared/validate-message/validate-message.component';
 import { MedicationComponent } from './components/medication/medication.component';
 import { HeaderComponent } from './components/shared/header/header.component';
 import { FooterComponent } from './components/shared/footer/footer.component';
@@ -36,7 +35,6 @@ export function HttpLoaderFactory(http: HttpClient) {
     QuestionareNewComponent,
     QuestionareListComponent,
     OverviewComponent,
-    ValidateMessageComponent,
     MedicationComponent,
     HeaderComponent,
     FooterComponent

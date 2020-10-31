@@ -6,7 +6,6 @@ import { first } from 'rxjs/operators';
 import { UserService } from '../../_services/user.service';
 import { AuthenticationService } from '../../_services/authentication.service';
 import { AlertService } from '../../_services/alert.service';
-import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-login',
@@ -27,14 +26,11 @@ export class LoginComponent implements OnInit {
     private authenticationService: AuthenticationService,
     private alertService: AlertService
   ) {
-    // redirect to home if already logged in
+    // presmerovani po uspesnem prihlaseni
     if (this.authenticationService.currentUserValue) {
       this.router.navigate(['/']);
     }
   }
-
-  // todo: privat validacni hlasky v sablonach
-  // todo: pridat nejake alespon fake prihlaseni
 
   ngOnInit() {
     this.loginForm = this.fb.group({
@@ -42,19 +38,11 @@ export class LoginComponent implements OnInit {
       password: ['', [Validators.required, Validators.minLength(8)]]
     });
 
-    // get return url from route parameters or default to '/'
+    // presmerovani na defaultni routu /
     this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
   }
 
   get f() { return this.loginForm.controls; }
-
-  get email() {
-    return this.loginForm.get('email');
-  }
-
-  get password() {
-    return this.loginForm.get('password');
-  }
 
   onSubmit(): void {
 
