@@ -1,19 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-// import { HTTP_INTERCEPTORS, HttpClient, HttpClientModule } from '@angular/common/http';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
-
+import { HTTP_INTERCEPTORS, HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { ReactiveFormsModule } from '@angular/forms';
-
-// toto je pro HTTP komunikaci mezi FE a BE
-// import {HttpClientInMemoryWebApiModule} from 'angular-in-memory-web-api';
-// tady jsou fake data, ktera pak budou na Back-Endu
-// import {InMemoryDataService} from './_services/in-memory-data.service';
-
-import { AuthGuard } from './_helpers/auth.guard';
+import { ErrorInterceptor, fakeBackendProvider, JwtInterceptor } from './_helpers';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -28,7 +20,6 @@ import { ValidateMessageComponent } from './components/shared/validate-message/v
 import { MedicationComponent } from './components/medication/medication.component';
 import { HeaderComponent } from './components/shared/header/header.component';
 import { FooterComponent } from './components/shared/footer/footer.component';
-// import { fakeBackendProvider, JwtInterceptor } from './_helpers';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -60,16 +51,15 @@ export function HttpLoaderFactory(http: HttpClient) {
         provide: TranslateLoader,
         useFactory: HttpLoaderFactory,
         deps: [HttpClient]
-      },
-      // defaultLanguage: 'en'
+      }
     })
   ],
   providers: [
-    /*{ provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
 
-    // provider used to create fake backend
-    fakeBackendProvider*/
+    // provider pouzity pro vytvoreni fake Back-endu
+    fakeBackendProvider
   ],
   bootstrap: [AppComponent]
 })

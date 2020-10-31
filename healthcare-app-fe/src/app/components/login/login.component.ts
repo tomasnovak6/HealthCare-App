@@ -56,8 +56,6 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(): void {
-    // console.log('login value', this.loginForm.value);
-    // console.log('login click', this.loginForm.status);
 
     this.submitted = true;
 
@@ -70,7 +68,7 @@ export class LoginComponent implements OnInit {
     }
 
     this.loading = true;
-    this.authenticationService.login(this.f.username.value, this.f.password.value)
+    this.authenticationService.login(this.f.email.value, this.f.password.value)
       .pipe(first())
       .subscribe(
         data => {

@@ -20,7 +20,7 @@ export class UserService {
   }
 
   getUsers(): Observable<IUser[]> {
-    return this.http.get<IUser[]>(`${config.apiUrl}/users`);
+    return this.http.get<IUser[]>('http://localhost:4000/users');
   }
 
   insertUser(form: any): Observable<IUser> {
