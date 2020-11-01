@@ -19,6 +19,8 @@ import { OverviewComponent } from './components/overview/overview.component';
 import { MedicationComponent } from './components/medication/medication.component';
 import { HeaderComponent } from './components/shared/header/header.component';
 import { FooterComponent } from './components/shared/footer/footer.component';
+import { AlertComponent } from './components/shared/alert/alert.component';
+import { TableModule } from 'primeng/table';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -37,7 +39,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     OverviewComponent,
     MedicationComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    AlertComponent
   ],
   imports: [
     BrowserModule,
@@ -50,7 +53,8 @@ export function HttpLoaderFactory(http: HttpClient) {
         useFactory: HttpLoaderFactory,
         deps: [HttpClient]
       }
-    })
+    }),
+    TableModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },

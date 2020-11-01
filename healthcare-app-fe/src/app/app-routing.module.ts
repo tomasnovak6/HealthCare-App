@@ -12,14 +12,14 @@ import { AuthGuard } from './_helpers';
 const routes: Routes = [
   { path: '', component: OverviewComponent, canActivate: [AuthGuard] }, // default component
   { path: 'login', component: LoginComponent },
-  // { path: 'overview', component: OverviewComponent },
-  { path: 'questionare', component: QuestionareComponent },
-  { path: 'statistics', component: StatisticsComponent },
-  { path: 'medication', component: MedicationComponent },
-  { path: 'editProfile', component: ProfileComponent },
+  // { path: 'overview', component: OverviewComponent, canActivate: [AuthGuard] },
+  { path: 'questionare', component: QuestionareComponent, canActivate: [AuthGuard] },
+  { path: 'statistics', component: StatisticsComponent, canActivate: [AuthGuard] },
+  { path: 'medication', component: MedicationComponent, canActivate: [AuthGuard] },
+  { path: 'editProfile', component: ProfileComponent, canActivate: [AuthGuard] },
   { path: 'registration', component: ProfileComponent },
 
-  // otherwise redirect to home
+  // jinak presmeruj na homepage
   { path: '**', redirectTo: '' }
 ];
 

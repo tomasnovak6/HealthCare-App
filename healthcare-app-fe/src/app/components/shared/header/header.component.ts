@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthenticationService } from '../../../_services/authentication.service';
+import { IUser } from '../../../_interfaces/iuser';
 
 @Component({
   selector: 'app-header',
@@ -8,6 +9,7 @@ import { AuthenticationService } from '../../../_services/authentication.service
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+  currentUser: IUser;
 
   constructor(
     private router: Router,
@@ -15,7 +17,7 @@ export class HeaderComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-
+    this.authenticationService.currentUser.subscribe(x => this.currentUser = x);
   }
 
   logout(): void {
