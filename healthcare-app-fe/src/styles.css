@@ -1,2 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 @import url(~bootstrap/dist/css/bootstrap.min.css);
+@media screen and (min-width: 576px) {
+  .form-group label {
+    text-align: right;
+    width: 100%;
+    margin-bottom: 0;
+    line-height: 2rem; } }
