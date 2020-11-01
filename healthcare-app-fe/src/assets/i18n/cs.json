@@ -11,7 +11,8 @@
     "register": "Registrovat"
   },
   "button": {
-    "openQuestionare": "Otevřít dotazník"
+    "openQuestionare": "Otevřít dotazník",
+    "addMedication": "Přidat medikaci"
   },
   "mainMenu": {
     "homepage": "Homepage",
