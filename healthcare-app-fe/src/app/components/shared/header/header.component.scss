@@ -1,6 +1,16 @@
+@import '../../../../variables.scss';
+
 #header {
   .container {
     padding-top: 1.5em;
     padding-bottom: 1.5em;
+
+    h1 {
+      text-align: center;
+
+      @media screen and (min-width: $breakpoint-sm) {
+        text-align: left;
+      }
+    }
   }
 }

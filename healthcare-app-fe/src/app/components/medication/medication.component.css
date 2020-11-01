@@ -9,7 +9,7 @@
 .medication-table tr:nth-child(even) td {
   background-color: #eeeeee; }
 
-@media screen and (max-width: 540px) {
+@media screen and (max-width: 575px) {
   :host ::ng-deep .p-datatable.p-datatable-responsive-demo .ui-table-thead > tr > th,
   :host ::ng-deep .p-datatable.p-datatable-responsive-demo .ui-table-tfoot > tr > td {
     display: none !important; }
