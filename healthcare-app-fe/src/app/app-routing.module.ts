@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { QuestionareComponent } from './components/questionare/questionare.component';
-import { StatisticsComponent } from './components/overview/statistics/statistics.component';
+import { StatisticsComponent } from './components/statistics/statistics.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { OverviewComponent } from './components/overview/overview.component';
 import { MedicationComponent } from './components/medication/medication.component';

@@ -9,7 +9,9 @@ import { IUser } from '../../../_interfaces/iuser';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+
   currentUser: IUser;
+  collapse: boolean = true;
 
   constructor(
     private router: Router,

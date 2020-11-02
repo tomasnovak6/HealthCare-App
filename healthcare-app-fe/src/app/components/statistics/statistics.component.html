@@ -1,0 +1,25 @@
+<!-- buttons -->
+<div class="row pb-4">
+  <div class="col-6 col-md-3">
+    <button
+      type="button"
+      class="{{'btn btn-block ' + this.btnClass['line']}}"
+      (click)="switchChartClick('line')"
+    >{{ 'button.lineChart' | translate }}</button>
+  </div>
+  <div class="col-6 col-md-3">
+    <button
+      type="button"
+      class="{{'btn btn-block ' + this.btnClass['radar']}}"
+      (click)="switchChartClick('radar')"
+    >{{ 'button.radarChart' | translate }}</button>
+  </div>
+</div>
+
+<!-- statistics -->
+<div class="row">
+  <div class="col-12">
+    <p-chart type="line" [data]="dataLine" *ngIf="shownGraph == 'line'"></p-chart>
+    <p-chart type="radar" [data]="dataRadar" *ngIf="shownGraph == 'radar'"></p-chart>
+  </div>
+</div>

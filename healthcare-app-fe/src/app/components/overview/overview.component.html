@@ -1,11 +1,15 @@
 <div class="row">
-  <h2>{{ 'common.hello' | translate }}</h2>
+  <div class="col-12">
+    <h2>{{ 'common.hello' | translate }}</h2>
+  </div>
 </div>
-<div class="row">
-  <button
-    class="btn btn-outline-primary"
-    (click)="openQuestionareClick()"
-  >{{ 'button.openQuestionare' | translate }}</button>
+<div class="row pt-4">
+  <div class="col-12 col-sm-4">
+    <button
+      class="btn btn-outline-primary btn-block"
+      (click)="openQuestionareClick()"
+    >{{ 'button.openQuestionare' | translate }}</button>
+  </div>
 </div>
 
 

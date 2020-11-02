@@ -11,7 +11,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { ProfileComponent } from './components/profile/profile.component';
-import { StatisticsComponent } from './components/overview/statistics/statistics.component';
+import { StatisticsComponent } from './components/statistics/statistics.component';
 import { QuestionareComponent } from './components/questionare/questionare.component';
 import { QuestionareNewComponent } from './components/questionare/questionare-new/questionare-new.component';
 import { QuestionareListComponent } from './components/questionare/questionare-list/questionare-list.component';
@@ -21,6 +21,7 @@ import { HeaderComponent } from './components/shared/header/header.component';
 import { FooterComponent } from './components/shared/footer/footer.component';
 import { AlertComponent } from './components/shared/alert/alert.component';
 import { TableModule } from 'primeng/table';
+import { ChartModule } from 'primeng/chart';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -54,7 +55,8 @@ export function HttpLoaderFactory(http: HttpClient) {
         deps: [HttpClient]
       }
     }),
-    TableModule
+    TableModule,
+    ChartModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },

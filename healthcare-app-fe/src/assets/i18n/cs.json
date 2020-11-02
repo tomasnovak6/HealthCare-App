@@ -12,7 +12,9 @@
   },
   "button": {
     "openQuestionare": "Otevřít dotazník",
-    "addMedication": "Přidat medikaci"
+    "addMedication": "Přidat medikaci",
+    "lineChart": "Spojnicový graf",
+    "radarChart": "Pavučinový teorém"
   },
   "mainMenu": {
     "homepage": "Homepage",
