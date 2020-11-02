@@ -44,7 +44,7 @@ export class StatisticsComponent implements OnInit {
 
     this.dataRadar = {
       // todo: doresit i18n a vubec nejak tu casovou radu
-      labels: ['Eating', 'Drinking', 'Sleeping', 'Designing', 'Coding', 'Cycling', 'Running'],
+      labels: ['Vedlejší účinky', 'Bolest', 'Únava', 'Spánek', 'Kožní problémy', 'Zažívací problémy', 'Jiné problémy'],
       datasets: [
         {
           label: 'Stav pacienta',
