@@ -3,6 +3,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { first } from 'rxjs/operators';
 
+import { MessageService } from 'primeng/api';
+
 import { UserService } from '../../_services/user.service';
 import { AuthenticationService } from '../../_services/authentication.service';
 import { AlertService } from '../../_services/alert.service';
@@ -10,7 +12,8 @@ import { AlertService } from '../../_services/alert.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  styleUrls: ['./login.component.scss'],
+  providers: [MessageService]
 })
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
@@ -24,8 +27,11 @@ export class LoginComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private authenticationService: AuthenticationService,
-    private alertService: AlertService
+    private alertService: AlertService,
+
+    private messageService: MessageService
   ) {
+
     // presmerovani po uspesnem prihlaseni
     if (this.authenticationService.currentUserValue) {
       this.router.navigate(['/']);
@@ -48,11 +54,12 @@ export class LoginComponent implements OnInit {
 
     this.submitted = true;
 
-    // reset alerts on submit
+    // vyresetovani vsech alertu pri submitu
     this.alertService.clear();
 
-    // stop here if form is invalid
+    // zastaveni prihlasovani, pokud je formular neplatny
     if (this.loginForm.invalid) {
+      console.log('login invalid');
       return;
     }
 
@@ -68,6 +75,18 @@ export class LoginComponent implements OnInit {
           this.loading = false;
         });
 
+  }
+
+  successClick(): void {
+    console.log('success click');
+    this.messageService.add({
+      severity: 'success',
+      summary: 'Service Message moje',
+      detail: 'Via MessageService moje',
+      life: 300000,
+      sticky: true,
+      closable: true
+    });
   }
 
 }

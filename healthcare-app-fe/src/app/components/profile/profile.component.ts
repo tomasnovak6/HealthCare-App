@@ -6,11 +6,13 @@ import { first } from 'rxjs/operators';
 
 import { AuthenticationService } from '../../_services/authentication.service';
 import { AlertService } from '../../_services/alert.service';
+import { MessageService } from "primeng/api";
 
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
-  styleUrls: ['./profile.component.scss']
+  styleUrls: ['./profile.component.scss'],
+  providers: [MessageService]
 })
 export class ProfileComponent implements OnInit {
 
@@ -23,7 +25,8 @@ export class ProfileComponent implements OnInit {
     private router: Router,
     private authenticationService: AuthenticationService,
     private userService: UserService,
-    private alertService: AlertService
+    private alertService: AlertService,
+    private messageService: MessageService
   ) {
     // presmerovani ma overview, pokud je uzivatel prihlasen
     if (this.authenticationService.currentUserValue) {
@@ -71,6 +74,18 @@ export class ProfileComponent implements OnInit {
           this.loading = false;
         });
 
+  }
+
+  successClick(): void {
+    console.log('success click');
+    this.messageService.add({
+      severity: 'success',
+      summary: 'Service Message moje',
+      detail: 'Via MessageService moje',
+      life: 300000,
+      sticky: true,
+      closable: true
+    });
   }
 
 }

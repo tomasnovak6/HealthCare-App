@@ -22,6 +22,8 @@ import { FooterComponent } from './components/shared/footer/footer.component';
 import { AlertComponent } from './components/shared/alert/alert.component';
 import { TableModule } from 'primeng/table';
 import { ChartModule } from 'primeng/chart';
+import { ToastModule } from "primeng/toast";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -43,21 +45,23 @@ export function HttpLoaderFactory(http: HttpClient) {
     FooterComponent,
     AlertComponent
   ],
-  imports: [
-    BrowserModule,
-    HttpClientModule,
-    AppRoutingModule,
-    ReactiveFormsModule,
-    TranslateModule.forRoot({
-      loader: {
-        provide: TranslateLoader,
-        useFactory: HttpLoaderFactory,
-        deps: [HttpClient]
-      }
-    }),
-    TableModule,
-    ChartModule
-  ],
+    imports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        HttpClientModule,
+        AppRoutingModule,
+        ReactiveFormsModule,
+        TranslateModule.forRoot({
+            loader: {
+                provide: TranslateLoader,
+                useFactory: HttpLoaderFactory,
+                deps: [HttpClient]
+            }
+        }),
+        TableModule,
+        ChartModule,
+        ToastModule
+    ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
