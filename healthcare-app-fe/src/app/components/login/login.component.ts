@@ -2,18 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { first } from 'rxjs/operators';
-
 import { MessageService } from 'primeng/api';
 
 import { UserService } from '../../_services/user.service';
 import { AuthenticationService } from '../../_services/authentication.service';
-import { AlertService } from '../../_services/alert.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss'],
-  providers: [MessageService]
+  styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
@@ -27,8 +24,6 @@ export class LoginComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private authenticationService: AuthenticationService,
-    private alertService: AlertService,
-
     private messageService: MessageService
   ) {
 
@@ -54,12 +49,18 @@ export class LoginComponent implements OnInit {
 
     this.submitted = true;
 
-    // vyresetovani vsech alertu pri submitu
-    this.alertService.clear();
+    // vyresetovani vsech zprav pri submitu
+    this.messageService.clear();
 
     // zastaveni prihlasovani, pokud je formular neplatny
     if (this.loginForm.invalid) {
-      console.log('login invalid');
+      this.messageService.add({
+        severity: 'error',
+        summary: 'Přihlášení proběhlo úspěšně.',
+        life: 300000,
+        sticky: true
+      });
+
       return;
     }
 
@@ -71,22 +72,16 @@ export class LoginComponent implements OnInit {
           this.router.navigate([this.returnUrl]);
         },
         error => {
-          this.alertService.error(error);
+          this.messageService.add({
+            severity: 'error',
+            summary: 'Zadal jste špatné přihlašovací údaje.',
+            life: 300000,
+            sticky: true
+          });
+
           this.loading = false;
         });
 
-  }
-
-  successClick(): void {
-    console.log('success click');
-    this.messageService.add({
-      severity: 'success',
-      summary: 'Service Message moje',
-      detail: 'Via MessageService moje',
-      life: 300000,
-      sticky: true,
-      closable: true
-    });
   }
 
 }

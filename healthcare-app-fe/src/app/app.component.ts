@@ -3,11 +3,13 @@ import { TranslateService } from '@ngx-translate/core';
 import { Router } from '@angular/router';
 import { AuthenticationService } from './_services/authentication.service';
 import { IUser } from './_interfaces/iuser';
+import { MessageService } from 'primeng/api';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+  providers: [MessageService]
 })
 export class AppComponent {
   title = 'healthcare-app-fe';
@@ -17,6 +19,9 @@ export class AppComponent {
   constructor(
     public translate: TranslateService,
     private router: Router,
+
+    private messageService: MessageService
+
     // private authenticationService: AuthenticationService
   ) {
     // translate init

@@ -1,3 +1,25 @@
 .content .container {
   padding-top: 2em;
   padding-bottom: 2em; }
+
+::ng-deep .ui-toast-message {
+  padding: 0.5em 1em;
+  position: absolute !important;
+  width: 80%;
+  border-radius: 0.3em;
+  z-index: 1000;
+  right: 30px;
+  top: 30px;
+  font-weight: 500;
+  font-size: 1.25rem; }
+  @media screen and (min-width: 576px) {
+    ::ng-deep .ui-toast-message {
+      width: 20%; } }
+  ::ng-deep .ui-toast-message.ui-toast-message-warn {
+    background: #ebeb91; }
+  ::ng-deep .ui-toast-message.ui-toast-message-error {
+    background: #eb9191; }
+  ::ng-deep .ui-toast-message.ui-toast-message-success {
+    background: #9ceb91; }
+  ::ng-deep .ui-toast-message.ui-toast-message-info {
+    background: #91c7eb; }

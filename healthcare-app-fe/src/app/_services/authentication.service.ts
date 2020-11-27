@@ -10,7 +10,6 @@ import { environment } from '../../environments/environment';
   providedIn: 'root'
 })
 export class AuthenticationService {
-  // todo: vyhodit any
   private currentUserSubject: BehaviorSubject<any>;
   public currentUser: Observable<any>;
 
@@ -19,7 +18,6 @@ export class AuthenticationService {
     this.currentUser = this.currentUserSubject.asObservable();
   }
 
-  // todo: vyhodit any
   public get currentUserValue(): any {
     return this.currentUserSubject.value;
   }

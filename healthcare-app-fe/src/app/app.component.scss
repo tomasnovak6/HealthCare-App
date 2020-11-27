@@ -1,6 +1,42 @@
+@import './../variables.scss';
+
 .content {
   .container {
     padding-top: 2em;
     padding-bottom: 2em;
+  }
+}
+
+::ng-deep {
+  .ui-toast-message {
+    padding: 0.5em 1em;
+    position: absolute !important;
+    width: 80%;
+    border-radius: 0.3em;
+    z-index: 1000;
+    right: 30px;
+    top: 30px;
+    font-weight: 500;
+    font-size: 1.25rem;
+
+    @media screen and (min-width: $breakpoint-sm) {
+      width: 20%;
+    }
+
+    &.ui-toast-message-warn {
+      background: $color-message-warn;
+    }
+
+    &.ui-toast-message-error {
+      background: $color-message-error;
+    }
+
+    &.ui-toast-message-success {
+      background: $color-message-success;
+    }
+
+    &.ui-toast-message-info {
+      background: $color-message-info;
+    }
   }
 }
