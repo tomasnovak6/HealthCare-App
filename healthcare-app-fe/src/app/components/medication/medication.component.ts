@@ -12,6 +12,7 @@ export class MedicationComponent implements OnInit {
 
   tableCols: ITableCol[];
   medications: IMedication[];
+  showAddMedication = false;
 
   constructor(private medicationService: MedicationService) { }
 
@@ -21,7 +22,7 @@ export class MedicationComponent implements OnInit {
   }
 
   addMedicationClick(): void {
-    console.log('addMedication');
+    this.showAddMedication = !this.showAddMedication;
   }
 
   getTableCols(): void {

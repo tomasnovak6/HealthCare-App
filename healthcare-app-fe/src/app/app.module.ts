@@ -19,12 +19,14 @@ import { OverviewComponent } from './components/overview/overview.component';
 import { MedicationComponent } from './components/medication/medication.component';
 import { HeaderComponent } from './components/shared/header/header.component';
 import { FooterComponent } from './components/shared/footer/footer.component';
-import { AlertComponent } from './components/shared/alert/alert.component';
 import { TableModule } from 'primeng/table';
 import { ChartModule } from 'primeng/chart';
 import { ToastModule } from "primeng/toast";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MessageService } from 'primeng/api';
+import { DialogModule } from 'primeng/dialog';
+import { ButtonModule } from 'primeng/button';
+import { AddMedicationComponent } from './components/medication/add-medication/add-medication.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -43,25 +45,27 @@ export function HttpLoaderFactory(http: HttpClient) {
     MedicationComponent,
     HeaderComponent,
     FooterComponent,
-    AlertComponent
+    AddMedicationComponent
   ],
-    imports: [
-        BrowserModule,
-        BrowserAnimationsModule,
-        HttpClientModule,
-        AppRoutingModule,
-        ReactiveFormsModule,
-        TranslateModule.forRoot({
-            loader: {
-                provide: TranslateLoader,
-                useFactory: HttpLoaderFactory,
-                deps: [HttpClient]
-            }
-        }),
-        TableModule,
-        ChartModule,
-        ToastModule
-    ],
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    HttpClientModule,
+    AppRoutingModule,
+    ReactiveFormsModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    }),
+    TableModule,
+    ChartModule,
+    ToastModule,
+    DialogModule,
+    ButtonModule
+  ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },

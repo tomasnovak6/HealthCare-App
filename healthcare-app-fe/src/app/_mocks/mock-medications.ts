@@ -5,9 +5,9 @@ export const MEDICATION_TABLECOLS: ITableCol[] = [
   {field: 'name', header: 'Jméno'},
   {field: 'dosageValue', header: 'Dávkování - hodnota'},
   {field: 'dosageUnit', header: 'Dávkování - jednotky'},
+  {field: 'timePeriodFrom', header: 'Začátek medikace'},
+  {field: 'timePeriodTo', header: 'Konec medikace'},
   {field: 'periodicity', header: 'Periodicita'}
-  // {field: 'updateAction', header: 'Editovat'},
-  // {field: 'deleteAction', header: 'Smazat'}
 ];
 
 export const MEDICATIONS: IMedication[] = [
@@ -16,6 +16,8 @@ export const MEDICATIONS: IMedication[] = [
     "name": "Minocyklin",
     "dosageValue": 100,
     "dosageUnit": "mg",
+    "timePeriodFrom": "1.11.2020",
+    "timePeriodTo": "30.11.2020",
     "periodicity": "1-0-1"
   },
   {
@@ -23,6 +25,8 @@ export const MEDICATIONS: IMedication[] = [
     "name": "APP plus",
     "dosageValue": 500,
     "dosageUnit": "mg",
+    "timePeriodFrom": "1.11.2020",
+    "timePeriodTo": "30.11.2020",
     "periodicity": "1-0-1"
   },
   {
@@ -30,6 +34,8 @@ export const MEDICATIONS: IMedication[] = [
     "name": "Vitamín C",
     "dosageValue": 500,
     "dosageUnit": "mg",
+    "timePeriodFrom": "1.11.2020",
+    "timePeriodTo": "30.11.2020",
     "periodicity": "1-0-1"
   },
   {
@@ -37,6 +43,8 @@ export const MEDICATIONS: IMedication[] = [
     "name": "Vitamín D",
     "dosageValue": 5000,
     "dosageUnit": "IU",
+    "timePeriodFrom": "1.11.2020",
+    "timePeriodTo": "30.11.2020",
     "periodicity": "1-0-0"
   }
 ];
