@@ -6,6 +6,7 @@ import { first } from 'rxjs/operators';
 
 import { AuthenticationService } from '../../_services/authentication.service';
 import { MessageService } from "primeng/api";
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-profile',
@@ -26,7 +27,8 @@ export class ProfileComponent implements OnInit {
     private router: Router,
     private authenticationService: AuthenticationService,
     private userService: UserService,
-    private messageService: MessageService
+    private messageService: MessageService,
+    private translate: TranslateService
   ) {
     // presmerovani ma overview, pokud je uzivatel prihlasen
     if (this.authenticationService.currentUserValue) {
@@ -34,11 +36,11 @@ export class ProfileComponent implements OnInit {
     }
 
     if (this.url = '/registration') {
-      this.messageSuccess = 'Registrace proběhla úspěšně.';
-      this.messageError = 'Při registraci nastala chyba.';
+      this.messageSuccess = this.translate.instant('alertMessage.profileRegistrationSuccess');
+      this.messageError = this.translate.instant('alertMessage.profileRegistrationError');
     } else {
-      this.messageSuccess = 'Editace proběhla úspěšně.';
-      this.messageError = 'Při editaci nastala chyba.'
+      this.messageSuccess = this.translate.instant('alertMessage.profileUpdateSuccess');
+      this.messageError = this.translate.instant('alertMessage.profileUpdateError');
     }
   }
 
@@ -65,7 +67,7 @@ export class ProfileComponent implements OnInit {
     if (this.profileForm.invalid) {
       this.messageService.add({
         severity: 'error',
-        summary: 'Odeslání formuláře nebylo úspěšné!',
+        summary: this.translate.instant('alertMessage.profileInvalid'),
         life: 3000
       });
 

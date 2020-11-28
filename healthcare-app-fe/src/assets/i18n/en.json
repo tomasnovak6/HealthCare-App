@@ -37,13 +37,40 @@
       "minlength": "Password must be at least 8 characters long."
     },
     "firstname": {
-      "required": "Name is required",
+      "required": "Name is required.",
       "minlength": "Name must be at least 3 characters long."
     },
     "lastname": {
       "required": "Last name is required",
       "minlength": "Last name must be at least 3 characters long."
+    },
+    "name": {
+      "required": "Name is required.",
+      "minlength": "Name must be at least 3 characters long."
+    },
+    "dosageValue": {
+      "required": "Dosage value is required.",
+      "minlength": "Dosage value be at least 1 character long."
+    },
+    "periodicity": {
+      "required": "Periodicity is required.",
+      "minlength": "Periodicity be at least 3 characters long."
     }
+  },
+  "alertMessage": {
+    "loginSuccess": "Login successful.",
+    "loginInvalid": "Form submission failed.",
+    "loginError": "You have entered an incorrect login.",
+    "firstQuestion": "You are on the first question.",
+    "lastQuestion": "You are on the last question.",
+    "medicationSuccess": "Medication saved successfully.",
+    "medicationError": "An error occurred while saving the medication.",
+    "medicationInvalid": "Form submission failed.",
+    "profileInvalid": "Form submission failed.",
+    "profileRegistrationSuccess": "Registration was successful.",
+    "profileRegistrationError": "An error occurred while registering.",
+    "profileUpdateSuccess": "Update was successful.",
+    "profileUpdateError": "An error occurred while updating."
   },
   "component": {
     "login": {

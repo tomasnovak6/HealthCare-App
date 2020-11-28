@@ -27,7 +27,6 @@ export class OverviewComponent implements OnInit {
   }
 
   openQuestionareClick(): void {
-    // console.log('openQuestionare');
     this.router.navigateByUrl('/questionare');
   }
 

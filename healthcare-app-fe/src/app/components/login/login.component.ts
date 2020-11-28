@@ -6,6 +6,7 @@ import { MessageService } from 'primeng/api';
 
 import { UserService } from '../../_services/user.service';
 import { AuthenticationService } from '../../_services/authentication.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-login',
@@ -24,7 +25,8 @@ export class LoginComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private authenticationService: AuthenticationService,
-    private messageService: MessageService
+    private messageService: MessageService,
+    private translate: TranslateService
   ) {
 
     // presmerovani po uspesnem prihlaseni
@@ -56,7 +58,7 @@ export class LoginComponent implements OnInit {
     if (this.loginForm.invalid) {
       this.messageService.add({
         severity: 'error',
-        summary: 'Přihlášení proběhlo úspěšně.',
+        summary: this.translate.instant('alertMessage.loginInvalid'),
         life: 3000
       });
 
@@ -73,7 +75,7 @@ export class LoginComponent implements OnInit {
         error => {
           this.messageService.add({
             severity: 'error',
-            summary: 'Zadal jste špatné přihlašovací údaje.',
+            summary: this.translate.instant('alertMessage.loginError'),
             life: 3000
           });
 

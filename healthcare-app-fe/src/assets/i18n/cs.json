@@ -43,7 +43,34 @@
     "lastname": {
       "required": "Příjmení je povinné.",
       "minlength": "Příjmení musí obsahovat minimálně 3 znaky."
+    },
+    "name": {
+      "required": "Název je povinný",
+      "minlength": "Název musí obsahovat minimálně 3 znaky."
+    },
+    "dosageValue": {
+      "required": "Hodnota dávkování je povinná.",
+      "minlength": "Hodnota dávkování musí obsahovat minimálně 1 znak."
+    },
+    "periodicity": {
+      "required": "Periodicita je povinná",
+      "minlength": "Periodicita musí obsahovat minimálně 3 znaky."
     }
+  },
+  "alertMessage": {
+    "loginSuccess": "Přihlášení proběhlo úspěšně.",
+    "loginInvalid": "Odeslání formuláře nebylo úspěšné.",
+    "loginError": "Zadal jste špatné přihlašovací údaje.",
+    "firstQuestion": "Jste na první otázce.",
+    "lastQuestion": "Jste na poslední otázce.",
+    "medicationSuccess": "Medikace byla úspěšně uložena.",
+    "medicationError": "Při ukládání medikace nastala chyba.",
+    "medicationInvalid": "Odeslání formuláře nebylo úspěšné.",
+    "profileInvalid": "Odeslání formuláře nebylo úspěšné.",
+    "profileRegistrationSuccess": "Registrace proběhla úspěšně.",
+    "profileRegistrationError": "Při registraci nastala chyba.",
+    "profileUpdateSuccess": "Editace proběhla úspěšně.",
+    "profileUpdateError": "Při editaci nastala chyba."
   },
   "component": {
     "login": {

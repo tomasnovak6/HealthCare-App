@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MessageService } from 'primeng/api';
 import { MedicationService } from '../../../_services/medication.service';
 import { first } from 'rxjs/operators';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-add-medication',
@@ -18,12 +19,13 @@ export class AddMedicationComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private messageService: MessageService,
-    private medicationService: MedicationService
+    private medicationService: MedicationService,
+    private translate: TranslateService
   ) { }
 
   ngOnInit() {
     this.addMedicationForm = this.fb.group({
-      name: ['', [Validators.required, Validators.minLength(5)]],
+      name: ['', [Validators.required, Validators.minLength(3)]],
       dosageValue: ['', [Validators.required, Validators.minLength(1)]],
       dosageUnit: [''],
       timePeriodFrom: [''],
@@ -44,7 +46,7 @@ export class AddMedicationComponent implements OnInit {
     if (this.addMedicationForm.invalid) {
       this.messageService.add({
         severity: 'error',
-        summary: 'Odeslání formuláře nebylo úspěšné!',
+        summary: this.translate.instant('alertMessage.medicationInvalid'),
         life: 3000
       });
 
@@ -57,7 +59,7 @@ export class AddMedicationComponent implements OnInit {
         data => {
           this.messageService.add({
             severity: 'success',
-            summary: 'Medikace byla úspěšně uložena',
+            summary: this.translate.instant('alertMessage.medicationSuccess'),
             life: 3000
           })
 
@@ -67,7 +69,7 @@ export class AddMedicationComponent implements OnInit {
         error => {
           this.messageService.add({
             severity: 'error',
-            summary: 'Při ukládání medikace nastala chyba',
+            summary: this.translate.instant('alertMessage.medicationError'),
             life: 3000
           });
         });
