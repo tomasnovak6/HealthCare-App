@@ -9,55 +9,27 @@ import { HealthConditionService } from '../../_services/health-condition.service
 })
 export class StatisticsComponent implements OnInit {
 
-  // todo: casem vyhodit to any
-  dataRadar: any;
-  dataLine: any;
-
   shownGraph: string = 'line';
   btnClass: object = {
     'line': 'btn-primary',
     'radar': 'btn-outline-primary'
   };
 
+  lineChart: any;
+  radarChart: any;
+
+  valueSummaryArr: number[] = [];
+  timelineArr: string[] = [];
+  valueByTypeArr: number[] = [];
+  typeArr: string[] = [];
+
   constructor(
     private healthConditionService: HealthConditionService
   ) { }
 
   ngOnInit() {
-
-    this.dataLine = {
-      // todo: doresit i18n a vubec nejak tu casovou radu
-      labels: ['Leden', 'Únor', 'Březen', 'Duben', 'Květen', 'Červen', 'Červenec'],
-      datasets: [
-        {
-          label: 'Stav pacienta',
-          data: [28, 48, 40, 52, 75, 78, 100],
-          backgroundColor: 'rgba(255,99,132,0.2)',
-          borderColor: 'rgba(255,99,132,1)',
-          pointBackgroundColor: 'rgba(255,99,132,1)',
-          pointBorderColor: '#fff',
-          pointHoverBackgroundColor: '#fff',
-          pointHoverBorderColor: 'rgba(255,99,132,1)',
-        }
-      ]
-    };
-
-    this.dataRadar = {
-      // todo: doresit i18n a vubec nejak tu casovou radu
-      labels: ['Vedlejší účinky', 'Bolest', 'Únava', 'Spánek', 'Kožní problémy', 'Zažívací problémy', 'Jiné problémy'],
-      datasets: [
-        {
-          label: 'Stav pacienta',
-          backgroundColor: 'rgba(255,99,132,0.2)',
-          borderColor: 'rgba(255,99,132,1)',
-          pointBackgroundColor: 'rgba(255,99,132,1)',
-          pointBorderColor: '#fff',
-          pointHoverBackgroundColor: '#fff',
-          pointHoverBorderColor: 'rgba(255,99,132,1)',
-          data: [28, 48, 40, 52, 75, 78, 100],
-        }
-      ]
-    };
+    this.lineChart = this.getLineChart();
+    this.radarChart = this.getRadarChart();
   }
 
   switchChartClick(chart: string) {
@@ -71,6 +43,70 @@ export class StatisticsComponent implements OnInit {
       this.btnClass['radar'] = 'btn-primary';
     }
 
+  }
+
+  setDataSummary() {
+    this.healthConditionService.getHealthConditionsSummary()
+      .subscribe(items => {
+        items.map((item, i) => {
+          this.valueSummaryArr[i] = item.valueSummary;
+          this.timelineArr[i] = item.date;
+        });
+      });
+  }
+
+  getLineChart() {
+    this.setDataSummary();
+
+    let lineChart = {
+      labels: this.timelineArr,
+      datasets: [
+        {
+          label: 'Stav pacienta',
+          data: this.valueSummaryArr,
+          backgroundColor: 'rgba(255,99,132,0.2)',
+          borderColor: 'rgba(255,99,132,1)',
+          pointBackgroundColor: 'rgba(255,99,132,1)',
+          pointBorderColor: '#fff',
+          pointHoverBackgroundColor: '#fff',
+          pointHoverBorderColor: 'rgba(255,99,132,1)',
+        }
+      ]
+    };
+
+    return lineChart;
+  }
+
+  setDataByType() {
+    this.healthConditionService.getHealthConditionsByType()
+      .subscribe(items => {
+        items.map((item, i) => {
+          this.valueByTypeArr[i] = item.value;
+          this.typeArr[i] = item.type;
+        });
+      });
+  }
+
+  getRadarChart() {
+    this.setDataByType();
+
+    let radarChart = {
+      labels: this.typeArr,
+      datasets: [
+        {
+          label: 'Stav pacienta',
+          backgroundColor: 'rgba(255,99,132,0.2)',
+          borderColor: 'rgba(255,99,132,1)',
+          pointBackgroundColor: 'rgba(255,99,132,1)',
+          pointBorderColor: '#fff',
+          pointHoverBackgroundColor: '#fff',
+          pointHoverBorderColor: 'rgba(255,99,132,1)',
+          data: this.valueByTypeArr,
+        }
+      ]
+    };
+
+    return radarChart;
   }
 
 }

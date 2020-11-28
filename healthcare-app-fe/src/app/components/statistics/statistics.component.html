@@ -19,7 +19,7 @@
 <!-- statistics -->
 <div class="row">
   <div class="col-12">
-    <p-chart type="line" [data]="dataLine" *ngIf="shownGraph == 'line'"></p-chart>
-    <p-chart type="radar" [data]="dataRadar" *ngIf="shownGraph == 'radar'"></p-chart>
+    <p-chart type="line" [data]="lineChart" *ngIf="shownGraph === 'line'"></p-chart>
+    <p-chart type="radar" [data]="radarChart" *ngIf="shownGraph === 'radar'"></p-chart>
   </div>
 </div>
