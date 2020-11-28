@@ -66,9 +66,7 @@ export class ProfileComponent implements OnInit {
       this.messageService.add({
         severity: 'error',
         summary: 'Odeslání formuláře nebylo úspěšné!',
-        life: 300000,
-        sticky: true,
-        closable: true
+        life: 300000
       });
 
       return;
@@ -82,8 +80,7 @@ export class ProfileComponent implements OnInit {
           this.messageService.add({
             severity: 'success',
             summary: this.messageSuccess,
-            life: 300000,
-            sticky: true
+            life: 300000
           })
 
           this.router.navigate(['/login']);
@@ -92,8 +89,7 @@ export class ProfileComponent implements OnInit {
           this.messageService.add({
             severity: 'error',
             summary: this.messageError,
-            life: 300000,
-            sticky: true
+            life: 300000
           });
 
           this.loading = false;

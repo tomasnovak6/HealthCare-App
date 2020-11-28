@@ -10,7 +10,7 @@
 
 <div class="row pb-4" [hidden]="!showAddMedication">
   <div class="col-12">
-    <app-add-medication></app-add-medication>
+    <app-add-medication (hidden)="closeAddMedication($event)"></app-add-medication>
   </div>
 </div>
 

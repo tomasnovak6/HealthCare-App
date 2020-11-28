@@ -14,7 +14,6 @@ export class UserService {
 
   }
 
-  // todo: vyresit any
   getUser(user: any): Observable<IUser> {
     return null;
   }
@@ -23,7 +22,6 @@ export class UserService {
     return this.http.get<IUser[]>(environment.apiUrl + 'users');
   }
 
-  // todo: vyresit any
   insertUser(user: any): Observable<any> {
     return this.http.post(environment.apiUrl + 'users/register', user);
   }

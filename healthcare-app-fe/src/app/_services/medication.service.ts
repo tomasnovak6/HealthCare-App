@@ -20,4 +20,8 @@ export class MedicationService {
     return of( MEDICATIONS );
   }
 
+  insertMedication(medication: any): Observable<IMedication> {
+    return null;
+  }
+
 }

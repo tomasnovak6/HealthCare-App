@@ -14,7 +14,9 @@ export class MedicationComponent implements OnInit {
   medications: IMedication[];
   showAddMedication = false;
 
-  constructor(private medicationService: MedicationService) { }
+  constructor(
+    private medicationService: MedicationService
+  ) { }
 
   ngOnInit() {
     this.getTableCols();
@@ -23,6 +25,10 @@ export class MedicationComponent implements OnInit {
 
   addMedicationClick(): void {
     this.showAddMedication = !this.showAddMedication;
+  }
+
+  closeAddMedication(event: any) {
+    this.showAddMedication = false;
   }
 
   getTableCols(): void {
