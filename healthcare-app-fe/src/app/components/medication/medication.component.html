@@ -8,8 +8,10 @@
   </div>
 </div>
 
-<div class="row">
-  <app-add-medication [hidden]="!showAddMedication"></app-add-medication>
+<div class="row pb-4" [hidden]="!showAddMedication">
+  <div class="col-12">
+    <app-add-medication></app-add-medication>
+  </div>
 </div>
 
 <div class="row">

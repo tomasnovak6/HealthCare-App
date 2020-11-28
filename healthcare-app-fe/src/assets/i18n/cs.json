@@ -8,10 +8,13 @@
     "add": "Přidat",
     "delete": "Odstranit",
     "login": "Přihlásit",
-    "register": "Registrovat"
+    "register": "Registrovat",
+    "save": "Uložit"
   },
   "button": {
     "openQuestionare": "Otevřít dotazník",
+    "previousQuestion": "Predchozí otázka",
+    "nextQuestion": "Další otázka",
     "addMedication": "Přidat medikaci",
     "lineChart": "Spojnicový graf",
     "radarChart": "Pavučinový teorém"
@@ -46,6 +49,20 @@
     "login": {
       "email": "E-mail",
       "password": "Heslo"
+    },
+    "medication": {
+      "name": "Název",
+      "dosageValue": "Dávkování - hodnota",
+      "dosageUnit": "Dávkování - jednotka",
+      "timePeriodFrom": "Začátek medikace",
+      "timePeriodTo": "Konec medikace",
+      "periodicity": "Periodicita",
+      "units": {
+        "mg": "mg",
+        "ml": "ml",
+        "iu": "IU",
+        "drops": "kapek"
+      }
     },
     "profile": {
       "email": "E-mail",

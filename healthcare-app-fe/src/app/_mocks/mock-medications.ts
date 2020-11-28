@@ -41,7 +41,7 @@ export const MEDICATIONS: IMedication[] = [
   {
     "id": 4,
     "name": "Vitamín D",
-    "dosageValue": 5000,
+    "dosageValue": 1000,
     "dosageUnit": "IU",
     "timePeriodFrom": "1.11.2020",
     "timePeriodTo": "30.11.2020",

@@ -6,10 +6,18 @@
     "no": "No",
     "cancel": "Cancel",
     "add": "Add",
-    "delete": "Delete"
+    "delete": "Delete",
+    "login": "Login",
+    "register": "Register",
+    "save": "Save"
   },
   "button": {
-    "openQuestionare": "Open Questionare"
+    "openQuestionare": "Open Questionare",
+    "previousQuestion": "Previous question",
+    "nextQuestion": "Next question",
+    "addMedication": "Add medication",
+    "lineChart": "Line Chart",
+    "radarChart": "Radar Chart"
   },
   "mainMenu": {
     "homepage": "Homepage",
@@ -41,6 +49,20 @@
     "login": {
       "email": "E-mail",
       "password": "Password"
+    },
+    "medication": {
+      "name": "Name",
+      "dosageValue": "Dosage - value",
+      "dosageUnit": "Dosage - unit",
+      "timePeriodFrom": "Medication from",
+      "timePeriodTo": "Medication to",
+      "periodicity": "Periodicity",
+      "units": {
+        "mg": "mg",
+        "ml": "ml",
+        "iu": "IU",
+        "drops": "drops"
+      }
     },
     "profile": {
       "email": "E-mail",

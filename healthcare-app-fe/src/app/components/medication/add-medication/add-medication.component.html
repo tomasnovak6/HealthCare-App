@@ -4,6 +4,15 @@
       <div class="col-12 col-sm-4"><label>{{ 'component.medication.name' | translate }}:</label></div>
       <div class="col-12 col-sm-8"><input type="text" id="name" class="form-control" formControlName="name" required /></div>
     </div>
+
+    <div *ngIf="f.name.invalid && (f.name.dirty || f.name.touched)" class="row">
+      <div class="col-12 offset-sm-4 col-sm-8">
+        <div class="alert alert-danger">
+          <div *ngIf="f.name.errors.required">{{ 'validationMessage.name.required' | translate }}</div>
+          <div *ngIf="f.name.errors.minlength">{{ 'validationMessage.name.minlength' | translate }}</div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <div class="form-group">
@@ -11,15 +20,60 @@
       <div class="col-12 col-sm-4"><label>{{ 'component.medication.dosageValue' | translate }}:</label></div>
       <div class="col-12 col-sm-8"><input type="text" id="dosageValue" class="form-control" formControlName="dosageValue" required /></div>
     </div>
+
+    <div *ngIf="f.dosageValue.invalid && (f.dosageValue.dirty || f.dosageValue.touched)" class="row">
+      <div class="col-12 offset-sm-4 col-sm-8">
+        <div class="alert alert-danger">
+          <div *ngIf="f.dosageValue.errors.required">{{ 'validationMessage.dosageValue.required' | translate }}</div>
+          <div *ngIf="f.dosageValue.errors.minlength">{{ 'validationMessage.dosageValue.minlength' | translate }}</div>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <!-- dosage unit -->
-  <!-- <div class="form-group">
+  <div class="form-group">
     <div class="row">
-
+      <div class="col-12 col-sm-4"><label>{{ 'component.medication.dosageUnit' | translate }}:</label></div>
+      <div class="col-12 col-sm-8">
+        <select id="dosageUnit" class="form-control" formControlName="dosageUnit">
+          <option value="mg">{{ 'component.medication.units.mg' | translate }}</option>
+          <option value="ml">{{ 'component.medication.units.ml' | translate }}</option>
+          <option value="iu">{{ 'component.medication.units.iu' | translate }}</option>
+          <option value="drops">{{ 'component.medication.units.drops' | translate }}</option>
+        </select>
+      </div>
     </div>
-  </div>-->
-  <!-- /dosage unit -->
+  </div>
+
+  <div class="form-group">
+    <div class="row">
+      <div class="col-12 col-sm-4"><label>{{ 'component.medication.timePeriodFrom' | translate }}:</label></div>
+      <div class="col-12 col-sm-8"><input type="date" id="timePeriodFrom" class="form-control" formControlName="timePeriodFrom" /></div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="row">
+      <div class="col-12 col-sm-4"><label>{{ 'component.medication.timePeriodTo' | translate }}:</label></div>
+      <div class="col-12 col-sm-8"><input type="date" id="timePeriodTo" class="form-control" formControlName="timePeriodTo" /></div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="row">
+      <div class="col-12 col-sm-4"><label>{{ 'component.medication.periodicity' | translate }}:</label></div>
+      <div class="col-12 col-sm-8"><input type="text" id="periodicity" class="form-control" formControlName="periodicity" required /></div>
+    </div>
+
+    <div *ngIf="f.periodicity.invalid && (f.periodicity.dirty || f.periodicity.touched)" class="row">
+      <div class="col-12 offset-sm-4 col-sm-8">
+        <div class="alert alert-danger">
+          <div *ngIf="f.periodicity.errors.required">{{ 'validationMessage.periodicity.required' | translate }}</div>
+          <div *ngIf="f.periodicity.errors.minlength">{{ 'validationMessage.periodicity.minlength' | translate }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <div class="row">
     <div class="col-12 col-sm-8 offset-sm-4">

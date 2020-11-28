@@ -9,6 +9,8 @@ import { HealthConditionService } from '../../_services/health-condition.service
 })
 export class QuestionareComponent implements OnInit {
 
+  currentQuestion: number = 1;
+
   constructor(
     private symptomService: SymptomService,
     private healthConditionService: HealthConditionService
@@ -22,8 +24,12 @@ export class QuestionareComponent implements OnInit {
 
   }
 
-  addSymptom() {
-
+  previousQuestion() {
+    console.log('previousQuestion');
   }
 
+
+  nextQuestion() {
+    console.log('nextQuestion');
+  }
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormGroup} from "@angular/forms";
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {MessageService} from "primeng/api";
 
 @Component({
@@ -18,12 +18,25 @@ export class AddMedicationComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.addMedicationForm = this.fb.group({
+      name: ['', [Validators.required, Validators.minLength(5)]],
+      dosageValue: ['', [Validators.required, Validators.minLength(1)]],
+      dosageUnit: [''],
+      timePeriodFrom: [''],
+      timePeriodTo: [''],
+      periodicity: ['', [Validators.required, Validators.minLength(3)]]
+    });
   }
+
+  get f() { return this.addMedicationForm.controls; }
 
   onSubmit(): void {
     console.log('submit add medication');
 
     this.submitted = true;
+
+    // vyresetovat notifikace pri submitu
+    this.messageService.clear();
   }
 
 }
