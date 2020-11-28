@@ -85,4 +85,13 @@ export class QuestionareComponent implements OnInit {
       this.router.navigate(['/statistics']);
     }
   }
+
+  getProgresbarValue(): number {
+    let result: number;
+    let count: number = this.questions.length;
+
+    result = Math.round(((this.currentQuestion / count) * 100));
+
+    return result;
+  }
 }
