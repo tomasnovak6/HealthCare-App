@@ -3,6 +3,7 @@ import { SymptomService } from '../../_services/symptom.service';
 import { QuestionareService } from '../../_services/questionare.service';
 import { IQuestion } from '../../_interfaces/iquestion';
 import { MessageService } from 'primeng/api';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-questionare',
@@ -18,7 +19,8 @@ export class QuestionareComponent implements OnInit {
   constructor(
     private symptomService: SymptomService,
     private questionareService: QuestionareService,
-    private messageService: MessageService
+    private messageService: MessageService,
+    private router: Router,
   ) { }
 
   ngOnInit() {
@@ -29,15 +31,11 @@ export class QuestionareComponent implements OnInit {
   getQuestions(): void {
     this.questionareService.getQuestions()
       .subscribe(questions => this.questions = questions);
-
-    console.log('questions', this.questions);
   }
 
   getQuestionById(id: number): void {
     this.questionareService.getQuestionIdBy(id)
       .subscribe(selectedQuestion => this.selectedQuestion = selectedQuestion);
-
-    console.log('selected question', this.selectedQuestion);
   }
 
   isFistQuestion(): boolean {
@@ -65,7 +63,6 @@ export class QuestionareComponent implements OnInit {
     if(!this.isFistQuestion()) {
       this.currentQuestion--;
       this.getQuestionById(this.currentQuestion);
-      console.log('previousQuestion');
     } else {
       this.messageService.add({
         severity: 'warn',
@@ -79,14 +76,13 @@ export class QuestionareComponent implements OnInit {
     if (!this.isLastQuestion()) {
       this.currentQuestion++;
       this.getQuestionById(this.currentQuestion);
-      console.log('nextQuestion');
     } else {
       this.messageService.add({
         severity: 'warn',
         summary: 'Jste na poslední otázce.',
         life: 3000
       });
-      // todo: jit na statistiky
+      this.router.navigate(['/statistics']);
     }
   }
 }
