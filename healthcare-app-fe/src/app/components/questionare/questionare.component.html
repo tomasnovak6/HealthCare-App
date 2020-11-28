@@ -2,7 +2,7 @@
 <div class="row">
   <div class="col-12">
     <div class="progress">
-      <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+      <div class="progress-bar" role="progressbar" style="width: 5%" aria-valuenow="5" aria-valuemin="0" aria-valuemax="100"></div>
     </div>
   </div>
 </div>
@@ -17,7 +17,6 @@
   </div>
 </div>
 
-<!-- staticka otazka -->
 <!-- headline -->
 <div class="row pt-4">
   <div class="col-12">
@@ -27,58 +26,28 @@
 
 <!-- question -->
 <div class="row pt-2">
-  <div class="col-12 col-sm-6">
+  <!-- answers -->
+  <div *ngIf="selectedQuestion.answers && selectedQuestion.answers.length > 0" class="col-12 col-sm-6">
 
-      <!-- option 1 -->
-      <div class="form-group">
-        <div class="form-check">
-          <div class="row">
-            <div class="col-10 col-md-8 col-lg-6">
-              <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
-              <label class="form-check-label" for="gridRadios1">Zlepšující se</label>
-            </div>
-            <div class="col-2">
-              <img src="/assets/images/arrow-up.png" alt="Zlepšující se" />
-            </div>
+    <div *ngFor="let item of selectedQuestion.answers; index as i" class="form-group">
+      <div class="form-check">
+        <div class="row">
+          <div class="col-10 col-md-8 col-lg-6">
+            <input class="form-check-input" type="radio" name="gridRadios" id="{{ 'gridRadios' + i }}" value="{{ 'option' + i }}" checked>
+            <label class="form-check-label" for="{{ 'gridRadios' + i }}">{{ item.answer }}</label>
+          </div>
+          <div *ngIf="item.icon && item.icon !== ''" class="col-2">
+            <img src="{{ item.icon }}" alt="{{ item.answer }}" />
           </div>
         </div>
       </div>
-
-      <!-- option 2 -->
-      <div class="form-group">
-        <div class="form-check">
-          <div class="row">
-            <div class="col-10 col-md-8 col-lg-6">
-              <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2" checked>
-              <label class="form-check-label" for="gridRadios1">Stále stejná</label>
-            </div>
-            <div class="col-2">
-              <img src="/assets/images/arrow-same.png" alt="Stále stejná" />
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- option 3 -->
-      <div class="form-group">
-        <div class="form-check">
-          <div class="row">
-            <div class="col-10 col-md-8 col-lg-6">
-              <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3" checked>
-              <label class="form-check-label" for="gridRadios1">Zhoršující se</label>
-            </div>
-            <div class="col-2">
-              <img src="/assets/images/arrow-down.png" alt="Zhoršující se" />
-            </div>
-          </div>
-        </div>
-      </div>
+    </div>
 
   </div>
+  <!-- /answers -->
 
   <!-- image -->
-  <div class="col-12 col-sm-6">
-    <img src="/assets/images/question-image-1.png" alt="Bolest hlavy" />
+  <div *ngIf="selectedQuestion.backgroundImage && selectedQuestion.backgroundImage !== ''" class="col-12 col-sm-6">
+    <img src="{{ selectedQuestion.backgroundImage }}" alt="{{ selectedQuestion.name }}" />
   </div>
 </div>
-<!-- /staticka otazka -->

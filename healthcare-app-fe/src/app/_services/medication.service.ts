@@ -21,6 +21,7 @@ export class MedicationService {
   }
 
   insertMedication(medication: any): Observable<IMedication> {
+    // tady by v pripade existujiciho skutecneho Back-endu bylo odeslani HTTP requestu na Back-end
     return null;
   }
 

@@ -7,7 +7,7 @@ export const QUESTIONS: IQuestion[] = [
     "backgroundImage": "/assets/images/question-image-1.png",
     "answers": [
       {
-        "answer": "Zlepšující se",
+        "answer": "Zlepšující se hlava",
         "icon": "/assets/images/arrow-up.png",
         "points": 10
       },
@@ -29,7 +29,7 @@ export const QUESTIONS: IQuestion[] = [
     "backgroundImage": "",
     "answers": [
       {
-        "answer": "Zlepšující se",
+        "answer": "Zlepšující se klouby",
         "icon": "",
         "points": 5
       },
@@ -51,7 +51,7 @@ export const QUESTIONS: IQuestion[] = [
     "backgroundImage": "",
     "answers": [
       {
-        "answer": "Zlepšující se",
+        "answer": "Zlepšující se zažívání",
         "icon": "",
         "points": 5
       },
