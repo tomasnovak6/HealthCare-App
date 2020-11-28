@@ -57,7 +57,7 @@ export class LoginComponent implements OnInit {
       this.messageService.add({
         severity: 'error',
         summary: 'Přihlášení proběhlo úspěšně.',
-        life: 300000
+        life: 3000
       });
 
       return;
@@ -74,12 +74,11 @@ export class LoginComponent implements OnInit {
           this.messageService.add({
             severity: 'error',
             summary: 'Zadal jste špatné přihlašovací údaje.',
-            life: 300000
+            life: 3000
           });
 
           this.loading = false;
         });
-
   }
 
 }

@@ -10,13 +10,19 @@
 <!-- arrows -->
 <div class="row pt-4">
   <div class="col-6 col-md-2">
-    <button class="btn btn-secondary btn-block" (click)="previousQuestion()">Předchozí otázka</button>
+    <button class="btn btn-secondary btn-block" (click)="previousQuestion()">{{ 'button.previousQuestion' | translate }}</button>
   </div>
   <div class="col-6 col-md-2">
-    <button class="btn btn-primary btn-block" (click)="nextQuestion()">Další otázka</button>
+    <button class="btn btn-primary btn-block" (click)="nextQuestion()">{{ 'button.nextQuestion' | translate }}</button>
   </div>
 </div>
 
+<!-- nactena otazka -->
+<h2></h2>
+<!-- /nactena otazka -->
+
+
+<!-- staticka otazka -->
 <!-- headline -->
 <div class="row pt-4">
   <div class="col-12">
@@ -80,3 +86,4 @@
     <img src="/assets/images/question-image-1.png" alt="Bolest hlavy" />
   </div>
 </div>
+<!-- /staticka otazka -->

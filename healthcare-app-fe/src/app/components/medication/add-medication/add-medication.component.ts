@@ -2,7 +2,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MessageService } from 'primeng/api';
 import { MedicationService } from '../../../_services/medication.service';
-import {first} from "rxjs/operators";
+import { first } from 'rxjs/operators';
 
 @Component({
   selector: 'app-add-medication',
@@ -45,7 +45,7 @@ export class AddMedicationComponent implements OnInit {
       this.messageService.add({
         severity: 'error',
         summary: 'Odeslání formuláře nebylo úspěšné!',
-        life: 300000
+        life: 3000
       });
 
       return;
@@ -58,8 +58,7 @@ export class AddMedicationComponent implements OnInit {
           this.messageService.add({
             severity: 'success',
             summary: 'Medikace byla úspěšně uložena',
-            life: 300000,
-            sticky: true
+            life: 3000
           })
 
           this.hidden.emit(true);
@@ -69,8 +68,7 @@ export class AddMedicationComponent implements OnInit {
           this.messageService.add({
             severity: 'error',
             summary: 'Při ukládání medikace nastala chyba',
-            life: 300000,
-            sticky: true
+            life: 3000
           });
         });
   }
