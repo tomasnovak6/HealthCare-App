@@ -23,7 +23,6 @@ export class QuestionareComponent implements OnInit {
 
   ngOnInit() {
     this.getQuestions();
-
     this.getQuestionById(this.currentQuestion);
   }
 
