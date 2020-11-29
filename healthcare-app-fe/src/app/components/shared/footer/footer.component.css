@@ -5,4 +5,8 @@
   height: 3em;
   line-height: 3em;
   text-align: center;
-  background-color: #dddddd; }
+  background-color: #dddddd;
+  font-size: 0.95rem; }
+  @media screen and (min-width: 576px) {
+    #footer {
+      font-size: 1rem; } }
