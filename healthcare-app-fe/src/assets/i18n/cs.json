@@ -34,7 +34,8 @@
     },
     "password": {
       "required": "Heslo je povinné.",
-      "minlength": "Heslo musí obsahovat minimálně 8 znaků."
+      "minlength": "Heslo musí obsahovat minimálně 8 znaků.",
+      "mustMatch": "Hesla se musí shodovat."
     },
     "firstname": {
       "required": "Jméno je povinné.",

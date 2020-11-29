@@ -34,7 +34,8 @@
     },
     "password": {
       "required": "Password is required.",
-      "minlength": "Password must be at least 8 characters long."
+      "minlength": "Password must be at least 8 characters long.",
+      "mustMatch": "Passwords must match."
     },
     "firstname": {
       "required": "Name is required.",
