@@ -16,11 +16,10 @@ const routes: Routes = [
   { path: 'questionare', component: QuestionareComponent, canActivate: [AuthGuard] },
   { path: 'statistics', component: StatisticsComponent, canActivate: [AuthGuard] },
   { path: 'medication', component: MedicationComponent, canActivate: [AuthGuard] },
-  { path: 'editProfile', component: ProfileComponent, canActivate: [AuthGuard] },
-  { path: 'registration', component: ProfileComponent, data: {formType: 'registration'} }
+  { path: 'registration', component: ProfileComponent, data: {formType: 'registration'} },
 
   // jinak presmeruj na homepage
-  // { path: '**', redirectTo: '' }
+  { path: '**', redirectTo: '' }
 ];
 
 @NgModule({
