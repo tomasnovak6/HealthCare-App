@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { QuestionareComponent } from './components/questionare/questionare.component';
+import { QuestionnaireComponent } from './components/questionnaire/questionnaire.component';
 import { StatisticsComponent } from './components/statistics/statistics.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { OverviewComponent } from './components/overview/overview.component';
@@ -13,7 +13,7 @@ const routes: Routes = [
   { path: '', component: OverviewComponent, canActivate: [AuthGuard] }, // default component
   { path: 'login', component: LoginComponent },
   // { path: 'overview', component: OverviewComponent, canActivate: [AuthGuard] },
-  { path: 'questionare', component: QuestionareComponent, canActivate: [AuthGuard] },
+  { path: 'questionnaire', component: QuestionnaireComponent, canActivate: [AuthGuard] },
   { path: 'statistics', component: StatisticsComponent, canActivate: [AuthGuard] },
   { path: 'medication', component: MedicationComponent, canActivate: [AuthGuard] },
   { path: 'registration', component: ProfileComponent, data: {formType: 'registration'} },

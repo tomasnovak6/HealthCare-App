@@ -6,7 +6,7 @@ import { QUESTIONS } from '../_mocks/mock-questions';
 @Injectable({
   providedIn: 'root'
 })
-export class QuestionareService {
+export class QuestionnaireService {
 
   constructor() { }
 

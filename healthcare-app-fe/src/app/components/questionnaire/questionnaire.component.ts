@@ -1,23 +1,23 @@
 import { Component, OnInit } from '@angular/core';
-import { QuestionareService } from '../../_services/questionare.service';
+import { QuestionnaireService } from '../../_services/questionnaire.service';
 import { IQuestion } from '../../_interfaces/iquestion';
 import { MessageService } from 'primeng/api';
 import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
-  selector: 'app-questionare',
-  templateUrl: './questionare.component.html',
-  styleUrls: ['./questionare.component.scss']
+  selector: 'app-questionniare',
+  templateUrl: './questionnaire.component.html',
+  styleUrls: ['./questionnaire.component.scss']
 })
-export class QuestionareComponent implements OnInit {
+export class QuestionnaireComponent implements OnInit {
 
   currentQuestion: number = 1;
   selectedQuestion: IQuestion;
   questions: IQuestion[];
 
   constructor(
-    private questionareService: QuestionareService,
+    private questionnaireService: QuestionnaireService,
     private messageService: MessageService,
     private router: Router,
     private translate: TranslateService
@@ -29,12 +29,12 @@ export class QuestionareComponent implements OnInit {
   }
 
   getQuestions(): void {
-    this.questionareService.getQuestions()
+    this.questionnaireService.getQuestions()
       .subscribe(questions => this.questions = questions);
   }
 
   getQuestionById(id: number): void {
-    this.questionareService.getQuestionIdBy(id)
+    this.questionnaireService.getQuestionIdBy(id)
       .subscribe(selectedQuestion => this.selectedQuestion = selectedQuestion);
   }
 

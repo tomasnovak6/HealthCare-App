@@ -12,7 +12,7 @@
     "save": "Save"
   },
   "button": {
-    "openQuestionare": "Open Questionare",
+    "openQuestionnaire": "Open Questionare",
     "previousQuestion": "Previous question",
     "nextQuestion": "Next question",
     "addMedication": "Add medication",
@@ -21,7 +21,7 @@
   },
   "mainMenu": {
     "homepage": "Homepage",
-    "questionare": "Questionare",
+    "questionnaire": "Questionnaire",
     "statistics": "Statistics",
     "medication": "Medication",
     "editProfile": "Edit profile",

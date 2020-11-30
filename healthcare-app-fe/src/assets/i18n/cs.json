@@ -12,7 +12,7 @@
     "save": "Uložit"
   },
   "button": {
-    "openQuestionare": "Otevřít dotazník",
+    "openQuestionnaire": "Otevřít dotazník",
     "previousQuestion": "Predchozí otázka",
     "nextQuestion": "Další otázka",
     "addMedication": "Přidat medikaci",
@@ -21,7 +21,7 @@
   },
   "mainMenu": {
     "homepage": "Homepage",
-    "questionare": "Dotazník",
+    "questionnaire": "Dotazník",
     "statistics": "Statistiky",
     "medication": "Medikace",
     "editProfile": "Editace profilu",

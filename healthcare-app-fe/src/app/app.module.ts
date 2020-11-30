@@ -13,7 +13,7 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { StatisticsComponent } from './components/statistics/statistics.component';
-import { QuestionareComponent } from './components/questionare/questionare.component';
+import { QuestionnaireComponent } from './components/questionnaire/questionnaire.component';
 import { OverviewComponent } from './components/overview/overview.component';
 import { MedicationComponent } from './components/medication/medication.component';
 import { HeaderComponent } from './components/shared/header/header.component';
@@ -37,7 +37,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     LoginComponent,
     ProfileComponent,
     StatisticsComponent,
-    QuestionareComponent,
+    QuestionnaireComponent,
     OverviewComponent,
     MedicationComponent,
     HeaderComponent,
