@@ -1,2 +1,2 @@
 # HealthCare-App
-HealthCare-App - proof of concept for my master thesis.
+HealthCare-App - sample application for my master thesis.
