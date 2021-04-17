@@ -1,17 +1,10 @@
 <?php
 
+require 'core/DbConnect.php';
 
 class Medication {
 
     public function __construct() {
-
-    }
-
-    private function getList() {
-
-    }
-
-    private function sqlDelete($id) {
 
     }
 
